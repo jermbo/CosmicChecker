@@ -521,7 +521,7 @@ const sia = {
 
 const weeknd = {
   desc: "We are going to need a lot of the same mark up as before. Can you spot the differences?",
-  example: `&lt;div id="The Weeknd" class="artist" style="background-image: url('images/demi_lovato.jpg');"&gt;
+  example: `&lt;div id="TheWeeknd" class="artist" style="background-image: url('images/demi_lovato.jpg');"&gt;
     &lt;h2 class="artist_name"&gt;
         &lt;a href="#"&gt;The Weeknd&lt;/a&gt;
     &lt;/h2&gt;
