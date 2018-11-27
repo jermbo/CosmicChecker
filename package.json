@@ -1,31 +1,32 @@
 {
-  "name": "generic_starter",
+  "name": "cosmic-checker",
   "version": "1.0.0",
-  "description": "A generic starting structure for simple sites. This is also meant to be a good starting point for more complex sites that have different file structures. Feel free to augment and adopt to your situation.",
+  "description": "A tool for teaching how to build websites with HTML and CSS",
   "main": "index.js",
-  "author": "Jermbo",
+  "author": "Jeremy 'Jermbo' Lawson",
   "license": "MIT",
   "scripts": {
     "dev": "./node_modules/.bin/gulp __start-local__"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^7.0.1",
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "eslint": "^5.9.0",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-changed": "^3.2.0",
-    "gulp-eslint": "^4.0.2",
-    "gulp-jsbeautifier": "^2.1.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-task-listing": "^1.0.1",
-    "run-sequence": "^2.2.1",
-    "yargs": "^11.0.0"
+    "yargs": "^12.0.2"
   }
 }

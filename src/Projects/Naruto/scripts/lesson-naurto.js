@@ -7,18 +7,17 @@ const start = {
       el: "h1",
       test: { item: "h1", value: "exist" },
       instructions: "Create a H1",
-      hint: "Add <h1></h1>"
+      hint: "Add <h1></h1>",
     },
     {
       type: "attribute",
       el: "h1",
       test: { item: "innerText", value: "Naruto!" },
       instructions: "Make the text say 'Naruto!'",
-      hint: "Add 'Naruto!' between the h1 tags"
-    }
-  ]
+      hint: "Add 'Naruto!' between the h1 tags",
+    },
+  ],
 };
-
 
 const steps = [start];
 // Pass the rules into this function and let the magic happen in the object
