@@ -3,7 +3,7 @@ const Checker = (function() {
   const body = document.querySelector("body");
   const wrapper = document.querySelector(".wrapper");
   const styles = document.styleSheets;
-  const interfaceStyles = document.createElement('style');
+  const interfaceStyles = document.createElement("style");
   let currentIndex, allTasks, statusBox, instructionsBox, prev, next;
 
   init();
@@ -48,12 +48,8 @@ const Checker = (function() {
   }
 
   function checkUserProgress() {
-    const previousCompleted = allTasks[currentIndex].tasks.every(
-      task => task.completed
-    );
-    console.log(
-      `currentIndex ${currentIndex} ::: previousCompleted ${previousCompleted}`
-    );
+    const previousCompleted = allTasks[currentIndex].tasks.every(task => task.completed);
+    console.log(`currentIndex ${currentIndex} ::: previousCompleted ${previousCompleted}`);
     if (previousCompleted) {
       currentIndex++;
 
@@ -80,21 +76,21 @@ const Checker = (function() {
     allTasks[currentIndex].tasks.forEach(task => {
       task.completed = false;
       switch (task.type) {
-        case "attribute":
-          testAttribute(task);
-          break;
-        case "children":
-          testChildren(task);
-          break;
-        case "element":
-          testElement(task);
-          break;
-        case "externalStyles":
-          testExternalStyles(task);
-          break;
-        case "inlineStyles":
-          testInlineStyles(task);
-          break;
+      case "attribute":
+        testAttribute(task);
+        break;
+      case "children":
+        testChildren(task);
+        break;
+      case "element":
+        testElement(task);
+        break;
+      case "externalStyles":
+        testExternalStyles(task);
+        break;
+      case "inlineStyles":
+        testInlineStyles(task);
+        break;
       }
     });
     updateInstructions();
@@ -106,7 +102,7 @@ const Checker = (function() {
     if (!element) return;
 
     const attr = obj.test.item;
-    const reg = new RegExp(obj.test.value, 'gi');
+    const reg = new RegExp(obj.test.value, "gi");
 
     if (element[attr].match(reg)) {
       console.log(`Added correct ${attr} to ${obj.el}`);
@@ -129,10 +125,7 @@ const Checker = (function() {
     const children = [...element.children];
     let total = 0;
     for (let i = 0; i < children.length; i++) {
-      if (
-        children[i].localName != undefined &&
-        children[i].localName == obj.test.item
-      ) {
+      if (children[i].localName != undefined && children[i].localName == obj.test.item) {
         total++;
         if (total >= obj.test.value) {
           break;
@@ -183,7 +176,7 @@ const Checker = (function() {
     const element = wrapper.querySelector(obj.el);
     if (!element) return;
     const attr = obj.test.item;
-    const reg = new RegExp(obj.test.value, 'gi');
+    const reg = new RegExp(obj.test.value, "gi");
 
     if (attr == "color" || attr == "background") {
       if (getHEX(element.style[attr]) == obj.test.value.toLowerCase()) {
@@ -192,7 +185,7 @@ const Checker = (function() {
       }
       return;
     }
-    console.log(element.style[attr])
+    console.log(element.style[attr]);
     if (element.style[attr] == obj.test.value) {
       console.log(`Added correct ${attr} to ${obj.el}`);
       obj.completed = true;
@@ -216,13 +209,13 @@ const Checker = (function() {
         </div>
         <ol>
             ${allTasks[currentIndex].tasks
-              .map(
-                task =>
-                  `<li title="${task.hint}" class="${
-                    task.completed ? "completed" : "todo"
-                  }">${task.instructions}.</li>`
-              )
-              .join("")}
+    .map(
+      task =>
+        `<li title="${task.hint}" class="${task.completed ? "completed" : "todo"}">${
+          task.instructions
+        }.</li>`,
+    )
+    .join("")}
         </ol>`;
     addEventListeners();
   }
@@ -276,6 +269,6 @@ const Checker = (function() {
 
   return {
     loadTests,
-    getVersion
+    getVersion,
   };
 })();
