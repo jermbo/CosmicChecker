@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const env = require("./gulp-env")();
 const config = require("./gulp-config")();
+const fs = require("fs");
 const $ = require("gulp-load-plugins")({ lazy: true });
 const browserSync = require("browser-sync").create();
 const del = require("del");
@@ -28,6 +29,17 @@ const Tasks = (function() {
       .pipe(browserSync.stream());
   }
 
+  function moveScripts() {
+    let pipeLine = gulp.src(`${env.buildPath}/scripts/*.js`);
+    let destinations = fs.readdirSync(`${env.srcPath}/Projects`);
+
+    destinations.forEach(d => {
+      pipeLine = pipeLine.pipe(gulp.dest(`${env.buildPath}/Projects/${d}/scripts`));
+    });
+
+    return pipeLine;
+  }
+
   function compileHTML() {
     return gulp
       .src(config.html.source)
@@ -45,6 +57,7 @@ const Tasks = (function() {
   return {
     compileStyles: compileStyles,
     compileScripts: compileScripts,
+    moveScripts: moveScripts,
     compileHTML: compileHTML,
     compileImages: compileImages,
   };
@@ -121,6 +134,7 @@ gulp.task(
   gulp.series(
     Jobs.clean,
     gulp.parallel(Tasks.compileStyles, Tasks.compileHTML, Tasks.compileScripts, Tasks.compileImages),
+    Tasks.moveScripts,
     Server.start,
     Jobs.watch,
   ),
