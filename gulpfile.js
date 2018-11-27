@@ -107,6 +107,7 @@ const Jobs = (function() {
           sound: false,
         })(err);
 
+        /* eslint-disable no-console */
         console.log(`
 
   /////////////////////////////////////
