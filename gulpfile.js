@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const env = require("./gulp-env")();
 const config = require("./gulp-config")();
-const fs = require("fs");
+const fs = require("file-system");
 const $ = require("gulp-load-plugins")({ lazy: true });
 const browserSync = require("browser-sync").create();
 const del = require("del");
@@ -40,6 +40,20 @@ const Tasks = (function() {
     return pipeLine;
   }
 
+  function zipProjects() {
+    del(["__final"]);
+    let pipeLine;
+    let projectNames = fs.readdirSync(`${env.buildPath}/Projects`);
+
+    projectNames.forEach(name => {
+      pipeLine = gulp.src(`${env.buildPath}/Projects/${name}/*`);
+      pipeLine = pipeLine.pipe($.zip(`${name}.zip`));
+      pipeLine = pipeLine.pipe(gulp.dest(`__final`));
+    });
+
+    return pipeLine;
+  }
+
   function compileHTML() {
     return gulp
       .src(config.html.source)
@@ -60,6 +74,7 @@ const Tasks = (function() {
     moveScripts: moveScripts,
     compileHTML: compileHTML,
     compileImages: compileImages,
+    zipProjects: zipProjects,
   };
 })();
 
@@ -140,3 +155,5 @@ gulp.task(
     Jobs.watch,
   ),
 );
+
+gulp.task("zip", gulp.series(Tasks.zipProjects));
