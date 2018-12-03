@@ -141,7 +141,7 @@ The example below is verifying if there is a second div inside the main `.wrappe
   el: "",
   test: { item: "div", value: 2 },
   instructions: "Create a &lt;div&gt;&lt;/div&gt; next to the header div",
-  hint: "Add <div></div>",
+  hint: "Add &lt;div&gt;&lt;/div&gt;",
 }
 ```
 
@@ -179,7 +179,7 @@ Secondly, most things you will be verifying would be an attribute of some sort. 
   el: "#looper .movie_details h2",
   test: { item: "innerText", value: "Looper" },
   instructions: "Add the text of 'Looper' to the &lt;h2&gt;&lt;/h2&gt;",
-  hint: "Add <h2>Looper</h2>",
+  hint: "Add &lt;h2&gt;Looper&lt;/h2&gt;",
 }
 ```
 

@@ -10,7 +10,7 @@ const start = {
       el: "",
       test: { item: "div", value: 1 },
       instructions: "Create a &lt;div&gt;&lt/div&gt; inside wrapper",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -38,7 +38,7 @@ const start = {
       el: "",
       test: { item: "div", value: 2 },
       instructions: "Create a &lt;div&gt;&lt;/div&gt; next to the header &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -63,7 +63,7 @@ const lukas = {
       el: ".artists",
       test: { item: "div", value: 1 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -130,7 +130,7 @@ const demi = {
       el: ".artists",
       test: { item: "div", value: 2 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -197,7 +197,7 @@ const bruno = {
       el: ".artists",
       test: { item: "div", value: 3 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -264,7 +264,7 @@ const ariana = {
       el: ".artists",
       test: { item: "div", value: 4 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -331,7 +331,7 @@ const adele = {
       el: ".artists",
       test: { item: "div", value: 5 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -398,7 +398,7 @@ const zedd = {
       el: ".artists",
       test: { item: "div", value: 6 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -465,7 +465,7 @@ const sia = {
       el: ".artists",
       test: { item: "div", value: 7 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -532,7 +532,7 @@ const weeknd = {
       el: ".artists",
       test: { item: "div", value: 8 },
       instructions: "Create a new &lt;div&gt;&lt/div&gt; inside the artists ",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",

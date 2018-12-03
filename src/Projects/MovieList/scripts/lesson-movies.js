@@ -10,7 +10,7 @@ const start = {
       el: "",
       test: { item: "div", value: 1 },
       instructions: "Create a &lt;div&gt;&lt;/div&gt; inside wrapper",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -38,7 +38,7 @@ const start = {
       el: "",
       test: { item: "div", value: 2 },
       instructions: "Create a &lt;div&gt;&lt;/div&gt; next to the header &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -67,7 +67,7 @@ const looper = {
       el: ".movies",
       test: { item: "div", value: 1 },
       instructions: "Create new a &lt;div&gt;&lt;/div&gt; inside the movies &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -109,7 +109,7 @@ const looper = {
       el: "#looper",
       test: { item: "div", value: 1 },
       instructions: "Create a new &lt;div&gt;&lt;/div&gt; tag next to the &lt;img src='' /&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -123,7 +123,7 @@ const looper = {
       el: "#looper .movie_details",
       test: { item: "h2", value: 1 },
       instructions: "Create an &lt;h2&gt;&lt;/h2&gt; tag inside the new &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -194,7 +194,7 @@ const wonderWoman = {
       el: ".movies",
       test: { item: "div", value: 2 },
       instructions: "Create new a &lt;div&gt;&lt;/div&gt; inside the movies &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -236,7 +236,7 @@ const wonderWoman = {
       el: "#wonderwoman",
       test: { item: "div", value: 1 },
       instructions: "Create a new &lt;div&gt;&lt;/div&gt; tag next to the &lt;img src='' /&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -250,7 +250,7 @@ const wonderWoman = {
       el: "#wonderwoman .movie_details",
       test: { item: "h2", value: 1 },
       instructions: "Create an &lt;h2&gt;&lt;/h2&gt; tag inside the new &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -328,7 +328,7 @@ const bladRunner = {
       el: ".movies",
       test: { item: "div", value: 3 },
       instructions: "Create new a &lt;div&gt;&lt;/div&gt; inside the movies &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -370,7 +370,7 @@ const bladRunner = {
       el: "#bladerunner",
       test: { item: "div", value: 1 },
       instructions: "Create a new &lt;div&gt;&lt;/div&gt; tag next to the &lt;img src='' /&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -384,7 +384,7 @@ const bladRunner = {
       el: "#bladerunner .movie_details",
       test: { item: "h2", value: 1 },
       instructions: "Create an &lt;h2&gt;&lt;/h2&gt; tag inside the new &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -462,7 +462,7 @@ const starWars = {
       el: ".movies",
       test: { item: "div", value: 4 },
       instructions: "Create new a &lt;div&gt;&lt;/div&gt; inside the movies div",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -504,7 +504,7 @@ const starWars = {
       el: "#starwars",
       test: { item: "div", value: 1 },
       instructions: "Create a new &lt;div&gt;&lt;/div&gt; tag next to the &lt;img src='' /&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -518,7 +518,7 @@ const starWars = {
       el: "#starwars .movie_details",
       test: { item: "h2", value: 1 },
       instructions: "Create an &lt;h2&gt;&lt;/h2&gt; tag inside the new &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -595,7 +595,7 @@ const logan = {
       el: ".movies",
       test: { item: "div", value: 5 },
       instructions: "Create new a div inside the movies div",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -637,7 +637,7 @@ const logan = {
       el: "#logan",
       test: { item: "div", value: 1 },
       instructions: "Create a new &lt;div&gt;&lt;/div&gt; tag next to the &lt;img src='' /&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
@@ -651,7 +651,7 @@ const logan = {
       el: "#logan .movie_details",
       test: { item: "h2", value: 1 },
       instructions: "Create an &lt;h2&gt;&lt;/h2&gt; tag inside the new &lt;div&gt;&lt;/div&gt;",
-      hint: "Add <div></div>",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
     },
     {
       type: "attribute",
