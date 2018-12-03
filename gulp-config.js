@@ -19,6 +19,10 @@ module.exports = () => {
       source: `${env.srcPath}/**/images/**/*.{${imgExtensions}}`,
       build: `${env.buildPath}/`,
     },
+    zips: {
+      source: `${env.buildPath}/Projects`,
+      build: "./zips",
+    },
     browserSync: {
       port: env.port,
       ghostMode: {

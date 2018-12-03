@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const env = require("./gulp-env")();
 const config = require("./gulp-config")();
-const fs = require("fs");
+const fs = require("file-system");
 const $ = require("gulp-load-plugins")({ lazy: true });
 const browserSync = require("browser-sync").create();
 const del = require("del");
@@ -30,11 +30,24 @@ const Tasks = (function() {
   }
 
   function moveScripts() {
+    const destinations = fs.readdirSync(`${env.srcPath}/Projects`);
     let pipeLine = gulp.src(`${env.buildPath}/scripts/*.js`);
-    let destinations = fs.readdirSync(`${env.srcPath}/Projects`);
 
     destinations.forEach(d => {
       pipeLine = pipeLine.pipe(gulp.dest(`${env.buildPath}/Projects/${d}/scripts`));
+    });
+
+    return pipeLine;
+  }
+
+  function zipProjects() {
+    const projectNames = fs.readdirSync(`${env.buildPath}/Projects`);
+    let pipeLine;
+
+    projectNames.forEach(name => {
+      pipeLine = gulp.src(`${env.buildPath}/Projects/${name}/*`);
+      pipeLine = pipeLine.pipe($.zip(`${name}.zip`));
+      pipeLine = pipeLine.pipe(gulp.dest(`${config.zips.build}`));
     });
 
     return pipeLine;
@@ -60,6 +73,7 @@ const Tasks = (function() {
     moveScripts: moveScripts,
     compileHTML: compileHTML,
     compileImages: compileImages,
+    zipProjects: zipProjects,
   };
 })();
 
@@ -88,7 +102,7 @@ const Server = (function() {
 
 const Jobs = (function() {
   function clean() {
-    return del([env.buildPath]);
+    return del([env.buildPath, config.zips.build]);
   }
 
   function watch() {
@@ -131,7 +145,7 @@ const Jobs = (function() {
 })();
 
 gulp.task(
-  "__start-local__",
+  "start-local",
   gulp.series(
     Jobs.clean,
     gulp.parallel(Tasks.compileStyles, Tasks.compileHTML, Tasks.compileScripts, Tasks.compileImages),
@@ -140,3 +154,16 @@ gulp.task(
     Jobs.watch,
   ),
 );
+
+gulp.task(
+  "build-projects",
+  gulp.series(
+    Jobs.clean,
+    gulp.parallel(Tasks.compileStyles, Tasks.compileHTML, Tasks.compileScripts, Tasks.compileImages),
+    Tasks.moveScripts,
+  ),
+);
+
+gulp.task("zip", gulp.series("build-projects", Tasks.zipProjects));
+
+gulp.task("clean", gulp.series(Jobs.clean));
