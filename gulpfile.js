@@ -45,7 +45,7 @@ const Tasks = (function() {
     let pipeLine;
 
     projectNames.forEach(name => {
-      pipeLine = gulp.src(`${env.buildPath}/Projects/${name}/*`);
+      pipeLine = gulp.src(`${env.buildPath}/Projects/${name}/**/*`);
       pipeLine = pipeLine.pipe($.zip(`${name}.zip`));
       pipeLine = pipeLine.pipe(gulp.dest(`${config.zips.build}`));
     });
