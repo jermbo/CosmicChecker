@@ -1,0 +1,12 @@
+// sass-lint:disable-all
+@mixin min-screen($size) {
+  @media( min-width: map-get($grid-breakpoints, $size)) {
+      @content;
+  }
+}
+
+@mixin max-screen($size) {
+  @media( max-width: map-get($grid-breakpoints, $size)) {
+      @content;
+  }
+}
