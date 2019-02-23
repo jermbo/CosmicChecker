@@ -1,0 +1,66 @@
+.header {
+  color: $brand-primary-alt;
+  padding: $padding/2 $padding;
+  display: flex;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+.logo {
+  width: 35%;
+  max-width: 50px;
+}
+
+.site-title {
+  font-size: $text-size-lg;
+  margin: 0 0 0 $padding/2;
+}
+
+.top-nav {
+  display: flex;
+  flex: 4;
+  color: $text-color-medium;
+}
+
+.top-nav__item {
+  padding-left: 26px;
+  padding-right: 26px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    &:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    bottom: -16px;
+    left: 15%;
+    background-color: $brand-primary;
+    visibility: hidden;
+  }
+}
+
+.header-profile {
+  flex: 0 0 auto;
+  width: 35px;
+}
+
+.profile-icon {
+  width: 100%;
+  display: block;
+}

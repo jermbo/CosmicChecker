@@ -1,0 +1,43 @@
+.footer-container {
+  display: flex;
+  align-items: center;
+  padding: $padding;
+  background: $brand-secondary;
+  color: $text-color-light;
+  font-size: $text-size-sm;
+  letter-spacing: 1px;
+}
+
+.footer-information {
+  display: inline-flex;
+  background: $brand-secondary;
+}
+
+.footer-col {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin-right: 50px;
+}
+
+.footer-col-title {
+  color: $brand-primary;
+  font-size: 14px;
+}
+
+.footer-div {
+  float: left;
+  position: relative;
+}
+
+.social-icon {
+  height: 42px;
+  width: auto;
+  float: right;
+  margin: 15px 15px 0 15px;
+}
+
+.icon-div {
+  margin-right: 75px;
+}
