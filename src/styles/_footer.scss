@@ -1,16 +1,10 @@
-.footer-container {
+.footer {
   display: flex;
   align-items: center;
   padding: $padding;
   background: $brand-secondary;
   color: $text-color-light;
   font-size: $text-size-sm;
-  letter-spacing: 1px;
-}
-
-.footer-information {
-  display: inline-flex;
-  background: $brand-secondary;
 }
 
 .footer-col {
@@ -21,23 +15,17 @@
   margin-right: 50px;
 }
 
-.footer-col-title {
+.footer-col__title {
   color: $brand-primary;
-  font-size: 14px;
+  font-size: $text-size-md;
 }
 
-.footer-div {
-  float: left;
-  position: relative;
-}
+.footer-col__link {
+  color: $text-color-light;
+  text-decoration: none;
+  display: block;
 
-.social-icon {
-  height: 42px;
-  width: auto;
-  float: right;
-  margin: 15px 15px 0 15px;
-}
-
-.icon-div {
-  margin-right: 75px;
+  &:hover {
+    color: $brand-primary;
+  }
 }

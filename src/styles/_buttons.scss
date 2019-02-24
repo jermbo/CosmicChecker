@@ -1,0 +1,22 @@
+.btn {
+  color: $text-color-light;
+  display: inline-block;
+  padding: $padding / 2 $padding * 2;
+  border-radius: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
+
+  &.-js {
+    background: #2cd7ee;
+    &:hover {
+      background: #0d86a1;
+    }
+  }
+
+  &.-html {
+    background: #925aec;
+
+    &:hover {
+      background: #5627a3;
+    }
+  }
+}
