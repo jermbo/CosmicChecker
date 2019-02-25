@@ -14,7 +14,12 @@
   align-items: center;
   padding: $padding * 2 $padding $padding;
   border-radius: 2px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.21);
+  @include transition;
+  @include base-box-shadow;
+
+  &:hover {
+    @include hover-box-shadow;
+  }
 
   &:not(:last-child) {
     margin-right: $padding;
@@ -31,4 +36,6 @@
 .lesson__icon {
   flex: 1 0 auto;
   max-width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
