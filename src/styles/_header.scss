@@ -9,8 +9,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex: 0 0 auto;
-  width: 200px;
+  flex: 0 0 250px;
 }
 
 .logo {
@@ -25,33 +24,37 @@
 
 .top-nav {
   display: flex;
-  flex: 4;
+  flex: 2 0 500px;
   color: $text-color-medium;
 }
 
 .top-nav__item {
-  padding-left: 26px;
-  padding-right: 26px;
+  color: $text-color-medium;
+  padding: $padding / 2 $padding;
   position: relative;
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
+    color: $brand-primary;
+
     &:before {
       visibility: visible;
-      transform: scaleX(1);
+      transform: scaleX(1) translate(-50%, 0);
     }
   }
 
   &:before {
     content: "";
+    @include transition;
     position: absolute;
+    bottom: 0;
     width: 70%;
     height: 2px;
-    bottom: -16px;
-    left: 15%;
+    left: 50%;
+    transform-origin: 0;
+    transform: scale(0) translate(-50%, 0);
     background-color: $brand-primary;
-    visibility: hidden;
   }
 }
 
