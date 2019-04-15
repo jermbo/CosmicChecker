@@ -6,10 +6,10 @@
   "author": "Jeremy 'Jermbo' Lawson",
   "license": "MIT",
   "scripts": {
-    "dev": "./node_modules/.bin/gulp start-local",
-    "build": "./node_modules/.bin/gulp build-projects",
-    "zip": "./node_modules/.bin/gulp zip",
-    "clean": "./node_modules/.bin/gulp clean"
+    "dev": "gulp start-local",
+    "build": "gulp build-projects",
+    "zip": "gulp zip",
+    "clean": "gulp clean"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
