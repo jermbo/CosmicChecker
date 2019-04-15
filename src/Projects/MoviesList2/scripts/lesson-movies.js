@@ -56,7 +56,7 @@ const spiderverse = {
   example: `&lt;div id="spiderverse" class="movie"&gt
   &lt;img src="images/spiderverse.jpg" class="movie_image" /&gt;
   &lt;div class="movie_details"&gt
-    &lt;h2 class="movie_title"&gt;spiderverse&lt;/h2&gt;
+    &lt;h2 class="movie_title"&gt;Spiderverse&lt;/h2&gt;
     &lt;p class="movie_desc"&gtBest movie ever!&lt;/p&gt;
     &lt;a class="movie_link" href="#"&gt;Read More&lt;/a&gt;
   &lt;/div&gt;
@@ -164,15 +164,22 @@ const spiderverse = {
       type: "children",
       el: "#spiderverse .movie_details",
       test: { item: "a", value: 1 },
-      instructions: "Create an &lt;a href=''&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
+      instructions: "Create an &lt;a href='#'&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
       hint: "Add &lt;a href=&quot;&quot;&gt;&lt;/a&gt;",
     },
     {
       type: "attribute",
       el: "#spiderverse div a",
       test: { item: "className", value: "movie_link" },
-      instructions: "Give that &lt;a href=''&gt;&lt;/a&gt; a class of 'movie_link'",
+      instructions: "Give that &lt;a href='#'&gt;&lt;/a&gt; a class of 'movie_link'",
       hint: "Add &lt;a class=&quot;movie_link&quot;&gt;&lt;/a&gt;",
+    },
+    {
+      type: "attribute",
+      el: "#spiderverse div a",
+      test: { item: "innerText", value: "Read More" },
+      instructions: "Add the text 'Read More' to that a tag",
+      hint: "Add &lt;a class=&quot;Read More&quot;&gt;&lt;/a&gt;",
     },
   ],
 };
@@ -291,15 +298,22 @@ const ralph = {
       type: "children",
       el: "#ralph .movie_details",
       test: { item: "a", value: 1 },
-      instructions: "Create an &lt;a href=''&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
+      instructions: "Create an &lt;a href='#'&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
       hint: "Add &lt;a href=&quot;&quot;&gt;&lt;/a&gt;",
     },
     {
       type: "attribute",
       el: "#ralph div a",
       test: { item: "className", value: "movie_link" },
-      instructions: "Give that &lt;a href=''&gt;&lt;/a&gt; a class of 'movie_link'",
+      instructions: "Give that &lt;a href='#'&gt;&lt;/a&gt; a class of 'movie_link'",
       hint: "Add &lt;a class=&quot;movie_link&quot;&gt;&lt;/a&gt;",
+    },
+    {
+      type: "attribute",
+      el: "#ralph div a",
+      test: { item: "innerText", value: "Read More" },
+      instructions: "Add the text 'Read More' to that a tag",
+      hint: "Add &lt;a class=&quot;Read More&quot;&gt;&lt;/a&gt;",
     },
   ],
 };
@@ -418,15 +432,22 @@ const incredibles2 = {
       type: "children",
       el: "#incredibles2 .movie_details",
       test: { item: "a", value: 1 },
-      instructions: "Create an &lt;a href=''&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
+      instructions: "Create an &lt;a href='#'&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
       hint: "Add &lt;a href=&quot;&quot;&gt;&lt;/a&gt;",
     },
     {
       type: "attribute",
       el: "#incredibles2 div a",
       test: { item: "className", value: "movie_link" },
-      instructions: "Give that &lt;a href=''&gt;&lt;/a&gt; a class of 'movie_link'",
+      instructions: "Give that &lt;a href='#'&gt;&lt;/a&gt; a class of 'movie_link'",
       hint: "Add &lt;a class=&quot;movie_link&quot;&gt;&lt;/a&gt;",
+    },
+    {
+      type: "attribute",
+      el: "#incredibles2 div a",
+      test: { item: "innerText", value: "Read More" },
+      instructions: "Add the text 'Read More' to that a tag",
+      hint: "Add &lt;a class=&quot;Read More&quot;&gt;&lt;/a&gt;",
     },
   ],
 };
@@ -437,7 +458,7 @@ const teentitans = {
   example: `&lt;div id="teentitans" class="movie"&gt
   &lt;img src="images/teentitans.jpg" class="movie_image" /&gt;
   &lt;div class="movie_details"&gt
-    &lt;h2 class="movie_title"&gt;Incredibles 2&lt;/h2&gt;
+    &lt;h2 class="movie_title"&gt;Teen Titans Go! to the Movies&lt;/h2&gt;
     &lt;p class="movie_desc"&gtBest movie ever!&lt;/p&gt;
     &lt;a class="movie_link" href="#"&gt;Read More&lt;/a&gt;
   &lt;/div&gt;
@@ -545,15 +566,22 @@ const teentitans = {
       type: "children",
       el: "#teentitans .movie_details",
       test: { item: "a", value: 1 },
-      instructions: "Create an &lt;a href=''&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
+      instructions: "Create an &lt;a href='#'&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
       hint: "Add &lt;a href=&quot;&quot;&gt;&lt;/a&gt;",
     },
     {
       type: "attribute",
       el: "#teentitans div a",
       test: { item: "className", value: "movie_link" },
-      instructions: "Give that &lt;a href=''&gt;&lt;/a&gt; a class of 'movie_link'",
+      instructions: "Give that &lt;a href='#'&gt;&lt;/a&gt; a class of 'movie_link'",
       hint: "Add &lt;a class=&quot;movie_link&quot;&gt;&lt;/a&gt;",
+    },
+    {
+      type: "attribute",
+      el: "#teentitans div a",
+      test: { item: "innerText", value: "Read More" },
+      instructions: "Add the text 'Read More' to that a tag",
+      hint: "Add &lt;a class=&quot;Read More&quot;&gt;&lt;/a&gt;",
     },
   ],
 };
@@ -564,7 +592,7 @@ const peterrabbit = {
   example: `&lt;div id="peterrabbit" class="movie"&gt
   &lt;img src="images/peterrabbit.jpg" class="movie_image" /&gt;
   &lt;div class="movie_details"&gt
-    &lt;h2 class="movie_title"&gt;Incredibles 2&lt;/h2&gt;
+    &lt;h2 class="movie_title"&gt;Peter Rabbit2&lt;/h2&gt;
     &lt;p class="movie_desc"&gtBest movie ever!&lt;/p&gt;
     &lt;a class="movie_link" href="#"&gt;Read More&lt;/a&gt;
   &lt;/div&gt;
@@ -672,15 +700,22 @@ const peterrabbit = {
       type: "children",
       el: "#peterrabbit .movie_details",
       test: { item: "a", value: 1 },
-      instructions: "Create an &lt;a href=''&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
+      instructions: "Create an &lt;a href='#'&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
       hint: "Add &lt;a href=&quot;&quot;&gt;&lt;/a&gt;",
     },
     {
       type: "attribute",
       el: "#peterrabbit div a",
       test: { item: "className", value: "movie_link" },
-      instructions: "Give that &lt;a href=''&gt;&lt;/a&gt; a class of 'movie_link'",
+      instructions: "Give that &lt;a href='#'&gt;&lt;/a&gt; a class of 'movie_link'",
       hint: "Add &lt;a class=&quot;movie_link&quot;&gt;&lt;/a&gt;",
+    },
+    {
+      type: "attribute",
+      el: "#peterrabbit div a",
+      test: { item: "innerText", value: "Read More" },
+      instructions: "Add the text 'Read More' to that a tag",
+      hint: "Add &lt;a class=&quot;Read More&quot;&gt;&lt;/a&gt;",
     },
   ],
 };
@@ -691,7 +726,7 @@ const titobirds = {
   example: `&lt;div id="titobirds" class="movie"&gt
   &lt;img src="images/titobirds.jpg" class="movie_image" /&gt;
   &lt;div class="movie_details"&gt
-    &lt;h2 class="movie_title"&gt;Incredibles 2&lt;/h2&gt;
+    &lt;h2 class="movie_title"&gt;Tito and the Birds&lt;/h2&gt;
     &lt;p class="movie_desc"&gtBest movie ever!&lt;/p&gt;
     &lt;a class="movie_link" href="#"&gt;Read More&lt;/a&gt;
   &lt;/div&gt;
@@ -799,15 +834,23 @@ const titobirds = {
       type: "children",
       el: "#titobirds .movie_details",
       test: { item: "a", value: 1 },
-      instructions: "Create an &lt;a href=''&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
+      instructions: "Create an &lt;a href='#'&gt;&lt;/a&gt; tag next to the &lt;p&gt;&lt;/p&gt; tag",
       hint: "Add &lt;a href=&quot;&quot;&gt;&lt;/a&gt;",
     },
     {
       type: "attribute",
       el: "#titobirds div a",
       test: { item: "className", value: "movie_link" },
-      instructions: "Give that &lt;a href=''&gt;&lt;/a&gt; a class of 'movie_link'",
+      instructions: "Give that &lt;a href='#'&gt;&lt;/a&gt; a class of 'movie_link'",
       hint: "Add &lt;a class=&quot;movie_link&quot;&gt;&lt;/a&gt;",
+    },
+
+    {
+      type: "attribute",
+      el: "#titobirds div a",
+      test: { item: "innerText", value: "Read More" },
+      instructions: "Add the text 'Read More' to that a tag",
+      hint: "Add &lt;a class=&quot;Read More&quot;&gt;&lt;/a&gt;",
     },
   ],
 };
