@@ -66,7 +66,7 @@ body {
   position: relative;
 }
 
-.eye {
+@mixin eye {
   border: $border;
   background: $white;
   border-radius: 100%;
@@ -74,11 +74,15 @@ body {
   height: 50px;
   position: absolute;
   top: 25%;
+}
+
+.eye-left {
+  @include eye;
   left: 25px;
 }
 
 .eye-right {
-  left: auto;
+  @include eye;
   right: 25px;
 }
 
@@ -133,7 +137,7 @@ body {
   }
 }
 
-.arm {
+@mixin arm {
   position: absolute;
   border: 12px solid $black;
   display: inline-block;
@@ -163,7 +167,12 @@ body {
   }
 }
 
+.arm-left {
+  @include arm;
+}
+
 .arm-right {
+  @include arm;
   left: auto;
   right: -100px;
   transform: rotate(135deg);
