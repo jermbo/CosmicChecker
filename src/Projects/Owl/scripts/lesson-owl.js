@@ -257,6 +257,123 @@ const beak = {
   ],
 };
 
-const steps = [wrapper, ears, eyes, beak];
+const body = {
+  desc: "Now we need to get the body done.",
+  example: `&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;div class=&quot;owl&quot;&gt;
+    &lt;div class=&quot;ear-left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;ear-right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;eyes&quot;&gt;
+      &lt;div class=&quot;eye eye-left&quot;&gt;
+        &lt;div class=&quot;eye-inner&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;eye eye-right&quot;&gt;
+        &lt;div class=&quot;eye-inner&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;beak&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;body&quot;&gt;
+      &lt;div class=&quot;dot-1&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;dot-2&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;dot-3&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;dot-4&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;dot-5&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feet&quot;&gt;
+      &lt;div class=&quot;foot-left&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;foot-right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;shadow&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`,
+  tasks: [
+    {
+      type: "children",
+      el: ".owl",
+      test: { item: "div", value: 5 },
+      instructions: "Create a &lt;div&gt;&lt;/div&gt; inside owl",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
+    },
+    {
+      type: "attribute",
+      el: ".body",
+      test: { item: "className", value: "body" },
+      instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'body'",
+      hint: "Add class=&quot;body&quot; to the &lt;div&gt;",
+    },
+    {
+      type: "children",
+      el: ".body",
+      test: { item: "div", value: 1 },
+      instructions: "Create a &lt;div&gt;&lt;/div&gt; inside body",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
+    },
+    {
+      type: "attribute",
+      el: ".dot-1",
+      test: { item: "className", value: "dot-1" },
+      instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'dot-1'",
+      hint: "Add class=&quot;dot-1&quot; to the &lt;div&gt;",
+    },
+    {
+      type: "children",
+      el: ".body",
+      test: { item: "div", value: 2 },
+      instructions: "Create a &lt;div&gt;&lt;/div&gt; inside body",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
+    },
+    {
+      type: "attribute",
+      el: ".dot-2",
+      test: { item: "className", value: "dot-2" },
+      instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'dot-2'",
+      hint: "Add class=&quot;dot-2&quot; to the &lt;div&gt;",
+    },
+    {
+      type: "children",
+      el: ".body",
+      test: { item: "div", value: 3 },
+      instructions: "Create a &lt;div&gt;&lt;/div&gt; inside body",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
+    },
+    {
+      type: "attribute",
+      el: ".dot-3",
+      test: { item: "className", value: "dot-3" },
+      instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'dot-3'",
+      hint: "Add class=&quot;dot-3&quot; to the &lt;div&gt;",
+    },
+    {
+      type: "children",
+      el: ".body",
+      test: { item: "div", value: 4 },
+      instructions: "Create a &lt;div&gt;&lt;/div&gt; inside body",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
+    },
+    {
+      type: "attribute",
+      el: ".dot-4",
+      test: { item: "className", value: "dot-4" },
+      instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'dot-4'",
+      hint: "Add class=&quot;dot-4&quot; to the &lt;div&gt;",
+    },
+    {
+      type: "children",
+      el: ".body",
+      test: { item: "div", value: 5 },
+      instructions: "Create a &lt;div&gt;&lt;/div&gt; inside body",
+      hint: "Add &lt;div&gt;&lt;/div&gt;",
+    },
+    {
+      type: "attribute",
+      el: ".dot-5",
+      test: { item: "className", value: "dot-5" },
+      instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'dot-5'",
+      hint: "Add class=&quot;dot-5&quot; to the &lt;div&gt;",
+    },
+  ],
+};
+
+const steps = [wrapper, ears, eyes, beak, body];
 // Pass the rules into this function and let the magic happen in the object
 window.load = Checker.loadTests(steps);
