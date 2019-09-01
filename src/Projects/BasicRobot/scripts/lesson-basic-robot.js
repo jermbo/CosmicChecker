@@ -30,13 +30,13 @@ const wrapper = {
       el: ".robot",
       test: { item: "className", value: "robot" },
       instructions: "Give that &lt;div&gt;&lt;/div&gt; a class of 'robot'",
-      hint: "Add class=&quot;robot&quot; to the <div>",
+      hint: "Add class=&quot;robot&quot; to the &lt;div&gt;",
     },
   ],
 };
 
 const antenna = {
-  desc: "Now that we have our robot container, let start at the top with the antenna.",
+  desc: "Now that we have our robot container, let's start at the top with the antenna.",
   example: `&lt;div class=&quot;wrapper&quot;&gt;
   &lt;div class=&quot;robot&quot;&gt;
     &lt;div class=&quot;antenna&quot;&gt;&lt;/div&gt;
