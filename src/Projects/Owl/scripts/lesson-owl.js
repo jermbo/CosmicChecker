@@ -107,6 +107,6 @@ const ears = {
   ],
 };
 
-const steps = [wrapper, ears];
+const steps = [wrapper, ears, eyes];
 // Pass the rules into this function and let the magic happen in the object
 window.load = Checker.loadTests(steps);
