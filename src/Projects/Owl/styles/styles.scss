@@ -12,6 +12,11 @@ body {
   background: $blue;
 }
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
 .owl {
   position: absolute;
   width: 150px;
