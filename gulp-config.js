@@ -38,7 +38,7 @@ module.exports = () => {
     options: {
       autoPrefixerOptions: ["last 4 versions", "> 9%"],
       sass: {
-        outputStyle: "compressed",
+        outputStyle: "expanded",
       },
     },
   };
