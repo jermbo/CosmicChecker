@@ -155,10 +155,7 @@ const Checker = (function() {
     for (const item of mainStyle.cssRules) {
       if (item.selectorText == obj.el) {
         if (attr == "color" || attr == "background") {
-          var rgb = getHEX(check);
-          console.log(`rgb ${rgb}`);
-          if (rgb == obj.test.value.toLowerCase()) {
-            console.log(`Added correct ${attr} to ${obj.el}`);
+          if (getHEX(check) == obj.test.value.toLowerCase()) {
             obj.completed = true;
           }
           return;
@@ -175,9 +172,9 @@ const Checker = (function() {
     const element = wrapper.querySelector(obj.el);
     if (!element) return;
     const attr = obj.test.item;
-    const reg = new RegExp(obj.test.value, "gi");
-
     if (attr == "color" || attr == "background") {
+      console.log(element.style[attr]);
+      console.log(obj.test.value.toLowerCase());
       if (getHEX(element.style[attr]) == obj.test.value.toLowerCase()) {
         console.log(`Added correct ${attr} to ${obj.el}`);
         obj.completed = true;

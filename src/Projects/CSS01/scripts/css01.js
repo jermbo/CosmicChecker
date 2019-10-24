@@ -16,6 +16,13 @@ const wrapper = {
       instructions: "do some font family",
       hint: "do some css",
     },
+    {
+      type: "inlineStyles",
+      el: "h1",
+      test: { item: "color", value: "#ff0000" },
+      instructions: "do some css",
+      hint: "do some css",
+    },
   ],
 };
 
