@@ -44,7 +44,7 @@ const Checker = (function() {
         left: 35vw;
         width: 65vw;
       }`;
-    console.log(interfaceStyles);
+    // console.log(interfaceStyles);
   }
 
   function checkUserProgress() {
@@ -149,17 +149,13 @@ const Checker = (function() {
 
   function testExternalStyles(obj) {
     const attr = obj.test.item;
-    if (!element) return;
-
     const mainStyle = styles[0];
     const check = mainStyle.cssRules[0].style[attr];
-    const element = wrapper.querySelector(obj.el);
 
     for (const item of mainStyle.cssRules) {
       if (item.selectorText == obj.el) {
         if (attr == "color" || attr == "background") {
           if (getHEX(check) == obj.test.value.toLowerCase()) {
-            console.log(`Added correct ${attr} to ${obj.el}`);
             obj.completed = true;
           }
           return;
@@ -176,9 +172,9 @@ const Checker = (function() {
     const element = wrapper.querySelector(obj.el);
     if (!element) return;
     const attr = obj.test.item;
-    const reg = new RegExp(obj.test.value, "gi");
-
     if (attr == "color" || attr == "background") {
+      console.log(element.style[attr]);
+      console.log(obj.test.value.toLowerCase());
       if (getHEX(element.style[attr]) == obj.test.value.toLowerCase()) {
         console.log(`Added correct ${attr} to ${obj.el}`);
         obj.completed = true;
@@ -211,9 +207,9 @@ const Checker = (function() {
             ${allTasks[currentIndex].tasks
     .map(
       task =>
-        `<li title="${task.hint}" class="${task.completed ? "completed" : "todo"}">${
-          task.instructions
-        }.</li>`,
+        `<li title="${task.hint}" class="${task.completed ? "completed" : "todo"}">
+        ${task.instructions}
+        .</li>`,
     )
     .join("")}
         </ol>`;
@@ -260,11 +256,14 @@ const Checker = (function() {
   }
 
   function getHEX(color) {
-    var rgb = color.match(/\d+/g);
-    var r = parseInt(rgb[0], 10);
-    var g = parseInt(rgb[1], 10);
-    var b = parseInt(rgb[2], 10);
-    return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`.toLowerCase();
+    let [r, g, b] = color.match(/\d+/g);
+    r = parseInt(r, 10);
+    g = parseInt(g, 10);
+    b = parseInt(b, 10);
+    const red = r < 10 ? `0${r}` : r;
+    const green = g < 10 ? `0${g}` : g;
+    const blue = b < 10 ? `0${b}` : b;
+    return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`.toLowerCase();
   }
 
   return {
