@@ -1,0 +1,195 @@
+$black: #2d2e2e;
+$white: #f7f7f7;
+$color: #f6ae2d;
+$color2: #f26419;
+$border: 12px solid $black;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+}
+
+.robot {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.antenna {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: $border;
+  background: $color;
+  margin-bottom: 15px;
+  position: relative;
+
+  &:after {
+    content: "";
+    height: 30px;
+    bottom: -30px;
+    position: absolute;
+    border: 5px solid $black;
+    left: 2px;
+  }
+}
+
+.head {
+  width: 200px;
+  height: 150px;
+  background: $color;
+  border: $border;
+  border-radius: 150px 150px 0 0;
+  position: relative;
+}
+
+@mixin eye {
+  border: $border;
+  background: $white;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 25%;
+}
+
+.eye-left {
+  @include eye;
+  left: 25px;
+}
+
+.eye-right {
+  @include eye;
+  right: 25px;
+}
+
+.mouth {
+  border: 5px solid $black;
+  width: 50%;
+  height: 0;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body {
+  width: 200px;
+  height: 150px;
+  background: $color2;
+  border: $border;
+  margin-top: -10px;
+  position: relative;
+}
+
+.bolt {
+  position: relative;
+  border: 5px solid $white;
+  background: $white;
+  border-radius: 10px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    border: 5px solid $white;
+    border-radius: 10px;
+    background: $white;
+    transform: rotate(-45deg);
+    top: -18px;
+    left: -8px;
+    display: block;
+    position: absolute;
+  }
+
+  &:after {
+    top: 8px;
+    left: auto;
+    right: -8px;
+  }
+}
+
+@mixin arm {
+  position: absolute;
+  border: 12px solid $black;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  padding: 0.5em;
+  border-radius: 50%;
+  left: -100px;
+  transform: rotate(45deg);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+
+  &:before {
+    content: "";
+    border: 12px solid $black;
+    display: inline-block;
+    min-width: 4em;
+    min-height: 4em;
+    border-radius: 50%;
+    bottom: -30px;
+    position: absolute;
+    transform: rotate(-45deg);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+}
+
+.arm-left {
+  @include arm;
+}
+
+.arm-right {
+  @include arm;
+  left: auto;
+  right: -100px;
+  transform: rotate(135deg);
+
+  &:before {
+    transform: rotate(-135deg);
+    bottom: auto;
+    top: -30px;
+  }
+}
+
+.bottom {
+  width: 200px;
+  height: 75px;
+
+  border-top: 50px solid $black;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+}
