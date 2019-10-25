@@ -88,6 +88,8 @@ When you need to check if a specific element exists on the page. I would be care
 
 When you need to verify external styles exist.
 
+***Note: in order to run this properly a server needs to be running. It is a CORS issue to load a CSS from any location other than your domain. Make sure you are running browser sync or, if you are teaching, you have LiveServer turned on and being used.***
+
 #### inlineStyles
 
 When you need to verify inline styles exist. This can be done utilizing the `attribute` type as well, but this takes it a step further and checks multiple rules.
@@ -109,7 +111,9 @@ If no element is provided, the Checker will assume the minimum state of `.wrappe
 
 Simply put, what do you want to test. Regardless of what you are testing for, the test tells the system what item or rule it should be looking for. And the value will verify what is expected.
 
-The only catch is the use of `className` in place of `class`. `class` is a reserved keyword in JavaScript and therefor cannot be used.
+When dealing with styles, both inline and external, to find any attribute with a dash in its name, remove the dashes and capitalize the first letters. For example; `font-family` becomes `fontFamily` for the item property. `border-radius` becomes `borderRadius`.
+
+When looking for an element with a class, you need to place `className` in the item attribute. This is due to the fact `class` is a reserved keyword in JavaScript.
 
 ### instructions
 
