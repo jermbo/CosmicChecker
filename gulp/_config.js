@@ -4,12 +4,14 @@ const env = process.env.ENV;
 
 const srcPath = "./src";
 const buildPath = "./build";
+const zipsPath = "./zips";
 const tmpPath = "./_tmp";
 const siteInstanceName = "./";
 
 module.exports = {
   srcPath,
   buildPath,
+  zipsPath,
   tmpPath,
   siteInstanceName,
   env,
@@ -40,7 +42,7 @@ module.exports = {
   },
   zips: {
     source: `${buildPath}/Projects`,
-    build: "./zips",
+    build: zipsPath
   },
 
   devURL: yargs.url ? yargs.url : siteInstanceName,

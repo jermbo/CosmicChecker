@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "gulp",
-    "compile": "gulp compile"
+    "compile": "gulp compile",
+    "clean": "gulp clean"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -23,7 +24,6 @@
     "del": "^5.1.0",
     "dotenv": "^8.1.0",
     "eslint": "^6.5.1",
-    "file-system": "^2.2.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-babel": "^8.0.0",
@@ -44,6 +44,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-uglifycss": "^1.1.0",
     "gulp-webp": "^4.0.1",
+    "gulp-zip": "^5.0.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "yargs": "^14.0.0"

@@ -1,8 +1,8 @@
-const { buildPath, tmpPath } = require("./_config");
+const { buildPath, tmpPath, zipsPath } = require("./_config");
 const del = require("del");
 
 function cleanAll() {
-  return del([buildPath, tmpPath]);
+  return del([buildPath, tmpPath, zipsPath]);
 }
 
 function cleanTmp() {

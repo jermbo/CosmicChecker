@@ -1,5 +1,5 @@
 const { watch, series } = require("gulp");
-const { reload, stream } = require("./browser-sync");
+const { reload } = require("./browser-sync");
 
 const { src: sassSrc, default: compileStyles } = require("./styles");
 const { src: imgSrc, default: compileImages } = require("./images");
