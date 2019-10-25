@@ -1,41 +1,15 @@
 const gulp = require("gulp");
 const $ = require("gulp-load-plugins")({ lazy: true });
 const plumber = require("./_plumber");
-
-const source = require("vinyl-source-stream");
-const buffer = require("vinyl-buffer");
-const babelify = require("babelify");
-const browserify = require("browserify");
-
-const { scripts } = require("./_config");
+const fs = require("fs");
+const path = require("path");
+const { srcPath, buildPath, scripts, projects } = require("./_config");
 
 const src = scripts.source;
 const build = scripts.build;
+const directories = projects.directories;
 
-var jsSRC = "./src/scripts/";
-var jsFront = "app.js";
-var jsFiles = [jsFront, "dashboard.js", "playground.js"];
-
-function bundleScripts(next) {
-  jsFiles.map(entry => {
-    return browserify({
-      entries: [jsSRC + entry],
-    })
-      .transform(babelify)
-      .bundle()
-      .pipe(source(entry))
-      .pipe(plumber("Error Running Scripts"))
-      .pipe(buffer())
-      .pipe($.if($.options.has("production"), $.stripDebug()))
-      .pipe($.sourcemaps.init({ loadMaps: true }))
-      .pipe($.uglify())
-      .pipe($.sourcemaps.write("."))
-      .pipe(gulp.dest(build));
-  });
-  next();
-}
-
-function compileScripts() {
+function transpileScripts() {
   return gulp
     .src(src)
     .pipe(plumber("Error Running Scripts"))
@@ -44,6 +18,28 @@ function compileScripts() {
     .pipe(gulp.dest(build));
 }
 
+function getFolders(dir) {
+  return fs.readdirSync(dir)
+    .filter(function(file) {
+      return fs.statSync(path.join(dir, file)).isDirectory();
+    });
+}
+
+function moveScripts() {
+  const destinations = directories.map(d => getFolders(`${srcPath}/Projects/${d}`));
+  let pipeLine = gulp.src(`${build}/*.js`);
+
+  destinations.forEach((dest, i) => {
+    dest.forEach(d => {
+      const output = `${buildPath}/Projects/${directories[i]}/${d}/scripts`;
+      pipeLine = pipeLine.pipe(gulp.dest(output));
+    });
+  });
+
+  return pipeLine;
+}
+
+const compileScripts = gulp.series(transpileScripts, moveScripts);
+
 exports.src = src;
-exports.bundle = bundleScripts;
 exports.default = compileScripts;
