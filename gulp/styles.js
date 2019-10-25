@@ -8,14 +8,13 @@ const src = styles.source;
 const build = styles.build;
 
 function compileStyles() {
+  console.log(src);
+  console.log(build);
   return gulp
     .src(src)
     .pipe($.sourcemaps.init())
     .pipe(plumber("Error running sass"))
     .pipe($.sass(styles.options.sass))
-    .pipe($.autoprefixer())
-    .pipe($.sourcemaps.write("./"))
-    .pipe($.size({ title: "Styles" }))
     .pipe(gulp.dest(build));
 }
 

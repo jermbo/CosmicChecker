@@ -14,26 +14,33 @@ module.exports = {
   siteInstanceName,
   env,
   html: {
-    source: `${srcPath}/**/*.{html,htm,php,cshtml}`,
-    build: `${buildPath}/`,
+    source: `${srcPath}/**/*.{html,htm}`,
+    build: `${buildPath}`,
   },
   styles: {
-    source: `${srcPath}/sass/**/*.{sass,scss,css}`,
-    build: `${buildPath}/styles/`,
+    source: `${srcPath}/**/styles/**/*.{sass,scss,css}`,
+    build: `${buildPath}`,
     options: {
-      sass: { outputStyle: "compressed" },
+      sass: { outputStyle: "expanded" },
     },
   },
   scripts: {
-    source: `${srcPath}/scripts/**/*.js`,
-    build: `${buildPath}/scripts/`,
+    source: `${srcPath}/**/scripts/**/*.js`,
+    build: `${buildPath}`,
   },
   images: {
-    source: `${srcPath}/images/**/*`,
-    build: `${buildPath}/images/`,
+    source: `${srcPath}/**/images/**/*`,
+    build: `${buildPath}`,
     options: {
       sizes: [400, 900, 1300],
     },
+  },
+  projects: {
+    directories: ["BeginnerCSS", "BeginnerHTML"]
+  },
+  zips: {
+    source: `${buildPath}/Projects`,
+    build: "./zips",
   },
 
   devURL: yargs.url ? yargs.url : siteInstanceName,
