@@ -27,7 +27,7 @@ function getFolders(dir) {
 
 function moveScripts() {
   const destinations = directories.map(d => getFolders(`${srcPath}/Projects/${d}`));
-  let pipeLine = gulp.src(`${build}/*.js`);
+  let pipeLine = gulp.src(`${build}/scripts/*.js`);
 
   destinations.forEach((dest, i) => {
     dest.forEach(d => {

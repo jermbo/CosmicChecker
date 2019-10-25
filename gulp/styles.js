@@ -8,8 +8,6 @@ const src = styles.source;
 const build = styles.build;
 
 function compileStyles() {
-  console.log(src);
-  console.log(build);
   return gulp
     .src(src)
     .pipe($.sourcemaps.init())
