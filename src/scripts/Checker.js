@@ -4,7 +4,7 @@ const Checker = (function() {
   const wrapper = document.querySelector(".wrapper");
   const styles = document.styleSheets;
   const interfaceStyles = document.createElement("style");
-  let currentIndex, allTasks, statusBox, instructionsBox, prev, next;
+  let currentIndex, allTasks, instructionsBox, prev, next;
 
   init();
 
@@ -103,7 +103,6 @@ const Checker = (function() {
 
     const attr = obj.test.item;
     const reg = new RegExp(obj.test.value, "gi");
-
     if (element[attr].match(reg)) {
       console.log(`Added correct ${attr} to ${obj.el}`);
       obj.completed = true;
@@ -173,15 +172,12 @@ const Checker = (function() {
     if (!element) return;
     const attr = obj.test.item;
     if (attr == "color" || attr == "background") {
-      console.log(element.style[attr]);
-      console.log(obj.test.value.toLowerCase());
       if (getHEX(element.style[attr]) == obj.test.value.toLowerCase()) {
         console.log(`Added correct ${attr} to ${obj.el}`);
         obj.completed = true;
       }
       return;
     }
-    console.log(element.style[attr]);
     if (element.style[attr] == obj.test.value) {
       console.log(`Added correct ${attr} to ${obj.el}`);
       obj.completed = true;
@@ -226,26 +222,15 @@ const Checker = (function() {
 
   function prevTasks(e) {
     e.preventDefault();
-    if (currentIndex <= 0) {
-      currentIndex = 0;
-    } else {
-      currentIndex--;
-    }
-    // currentIndex = (currentIndex <= 0) ? 0 : currentIndex--;
-    console.log(currentIndex);
+    currentIndex = (currentIndex <= 0) ? 0 : --currentIndex;
     removeEventListeners();
     updateInstructions();
   }
 
   function nextTasks(e) {
     e.preventDefault();
-    if (currentIndex >= allTasks.length - 1) {
-      currentIndex = allTasks.length - 1;
-    } else {
-      currentIndex++;
-    }
-    // currentIndex = (currentIndex > allTasks.length - 1) ? allTasks.length - 1 : currentIndex++;
-    console.log(currentIndex);
+    const total = allTasks.length - 1;
+    currentIndex = (currentIndex >= total) ? total : ++currentIndex;
     removeEventListeners();
     updateInstructions();
   }
