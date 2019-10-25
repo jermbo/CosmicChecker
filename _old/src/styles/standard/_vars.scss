@@ -1,0 +1,83 @@
+// ------------------------------------------------------ //
+// General Settings
+// ---------------
+//
+// ----------------------------------------------------------------------------------- //
+// reference material
+// scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries
+// css-tricks.com/snippets/css/media-queries-for-standard-devices
+// ----------------------------------------------------------------------------------- //
+// below is a really comprehensive guide to break points
+// responsivedesign.is/develop/browser-feature-support/media-queries-for-common-device-breakpoints
+// ----------------------------------------------------------------------------------- //
+// iphone  || small devices || desktops || wide screens || large screens || super wide //
+// xs: 320 || sm: 480       || md: 768  || lg: 1024     || xl: 1274      || xxl: 1548  //
+// ----------------------------------------------------------------------------------- //
+$container-max-widths: (
+  xs: 90%,
+  sm: 400px,
+  md: 688px,
+  lg: 944px,
+  xl: 1194px,
+  xxl: 1468px
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1274px,
+  xxl: 1548px
+);
+
+//-------------
+// Padding
+
+$padding: 1.1rem;
+
+// Colors
+$san-juan: #2d4c68;
+$conifer: #bada55;
+$limeade: #29a200;
+
+// Grays
+$pure-white: #f5f5f5;
+$off-black: #222222;
+$pure-black: #020202;
+
+// Brand Colors
+$brand-primary: $conifer;
+$brand-primary-alt: $limeade;
+$brand-secondary: $san-juan;
+
+$bg-light: $pure-white;
+$bg-dark: $pure-black;
+
+$text-color-light: $pure-white;
+$text-color-medium: $off-black;
+$text-color-dark: $pure-black;
+
+$base-font-size: 1rem;
+$text-size-sm: $base-font-size - 0.25;
+$text-size-md: $base-font-size - 0.15;
+$text-size-base: $base-font-size;
+$text-size-lg: $base-font-size + 0.15;
+$text-size-xl: $base-font-size + 0.25;
+
+$title-size-sm: $base-font-size + 1.15;
+$title-size-md: $base-font-size + 1.25;
+$title-size-lg: $base-font-size + 1.35;
+$title-size-xl: $base-font-size + 1.55;
+
+// ------------------------------------------------------ //
+// Typography
+// ------
+@import url("https://fonts.googleapis.com/css?family=BioRhyme:300,400,700|Cabin:400,600");
+$text-font-family: "Cabin", sans-serif;
+$title-font-family: "BioRhyme", serif;
+$line-height: 1.5em;
+
+$font-weight-thin: 300;
+$font-weight-light: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;

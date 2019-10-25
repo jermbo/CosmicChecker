@@ -1,0 +1,25 @@
+.page-wrapper {
+  padding: 0 $padding;
+  margin-bottom: $padding;
+}
+
+.page-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: $padding 0 $padding * 2;
+}
+
+.page-info__title {
+  color: $brand-primary-alt;
+  font-family: $title-font-family;
+  margin: 0;
+  font-size: $title-size-lg;
+}
+
+.page-info__sub-title {
+  color: $text-color-medium;
+  margin: $padding/2 0 0;
+}

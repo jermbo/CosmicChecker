@@ -1,0 +1,44 @@
+::selection {
+  background: $brand-secondary;
+  color: $text-color-light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: $line-height;
+  font-family: $text-font-family;
+  font-size: $text-size-base;
+  color: $text-color-dark;
+}
+
+ol,
+ul {
+  margin: 0;
+  left: 0;
+}
+
+a {
+  @include transition($transition-time: 0.15s);
+}
+
+p {
+  margin: $padding/2 0 0;
+  font-weight: $font-weight-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-medium;
+  line-height: $line-height;
+  margin: 0 0 $padding/2;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
