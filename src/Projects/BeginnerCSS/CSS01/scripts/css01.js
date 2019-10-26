@@ -440,6 +440,73 @@ const text = {
   ],
 };
 
-const steps = [heading, boxes, boxes2, buttons, buttons2, text];
+const text2 = {
+  desc: "There is a lot more text to be styles. ",
+  example: `.text2 {
+  font-family: Roboto;
+  font-size: 50px;
+  margin: 5px;
+  color: #23558e;
+}
+
+.text3 {
+  text-decoration: line-through;
+  color: #bb1c1c;
+  font-size: 20px;
+}`,
+  tasks: [
+    {
+      type: "externalStyles",
+      el: ".text2",
+      test: { item: "fontFamily", value: "Roboto" },
+      instructions: "Give '.text2' a 'font-family' of Roboto",
+      hint: "font-family: Roboto;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text2",
+      test: { item: "fontSize", value: "50px" },
+      instructions: "Give '.text2' a 'font-size' of 50px",
+      hint: "font-size: 50px;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text2",
+      test: { item: "margin", value: "5px" },
+      instructions: "Give '.text2' a 'margin' of 5px",
+      hint: "margin: 5px;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text2",
+      test: { item: "color", value: "#23558e" },
+      instructions: "Give '.text2' a 'color' of #23558e",
+      hint: "color: #23558e;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text3",
+      test: { item: "textDecoration", value: "line-through" },
+      instructions: "Give '.text3' a 'text-decoration' of line-through",
+      hint: "text-decoration: line-through;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text3",
+      test: { item: "color", value: "#bb1c1c" },
+      instructions: "Give '.text3' a 'color' of #bb1c1c",
+      hint: "color: #bb1c1c;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text3",
+      test: { item: "font-size", value: "20px" },
+      instructions: "Give '.text3' a 'font-size' of 20px",
+      hint: "font-size: 20px;",
+    },
+  ],
+};
+
+const steps = [heading, boxes, boxes2, buttons, buttons2, text, text2];
 // Pass the rules into this function and let the magic happen
 window.load = Checker.loadTests(steps);

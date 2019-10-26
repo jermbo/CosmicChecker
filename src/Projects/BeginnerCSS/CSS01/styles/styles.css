@@ -1,94 +1,41 @@
 h1 {
-  color: #1c77c3;
-  background: #7fc6ff;
-  font-family: Helvetica;
-  text-align: center;
-  margin: 0px;
-  padding: 20px;
 }
 
 .boxes {
-  background: #cce3fc;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .box1 {
-  width: 100px;
-  height: 100px;
-  background: #ffffff;
-  text-align: center;
 }
 
 .box2 {
-  width: 150px;
-  height: 150px;
-  padding: 10px;
-  background: #13987d;
-  border-radius: 10px;
 }
 
 .box3 {
-  width: 75px;
-  height: 75px;
-  padding: 15px;
-  border-radius: 50px;
-  background: #ae2c6b;
-  color: #fa85bc;
 }
 
 .buttons {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #d0e3f8;
-  padding: 50px;
 }
 
 .button1 {
-  color: #1430cb;
-  font-size: 20px;
 }
+
 .button1:hover {
-  color: #b62020;
-  text-decoration: none;
 }
 
 .button2 {
-  background: #82263a;
-  color: #ff97af;
-  cursor: zoom-in;
-  padding: 18px;
-  border-radius: 70px;
-  text-decoration: none;
 }
+
 .button2:hover {
-  color: #ffbfce;
-  background: #501723;
 }
 
 .texts {
-  background: #d0e3f8;
-  padding: 30px;
 }
 
 .text1 {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font-family: Verdana;
-  font-weight: 900;
 }
 
 .text2 {
-  font-family: Roboto;
-  font-size: 50px;
-  margin: 5px;
-  color: #23558e;
 }
 
 .text3 {
-  text-decoration: line-through;
-  color: #bb1c1c;
-  font-size: 20px;
 }

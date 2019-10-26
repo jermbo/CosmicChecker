@@ -149,7 +149,10 @@ const Checker = (function() {
   function testExternalStyles(obj) {
     const attr = obj.test.item;
     const mainStyle = styles[0];
-    const check = [...mainStyle.cssRules].filter(rule => rule.selectorText == obj.el)[0].style[attr];
+    // TODO: need to rethink this
+    const start = [...mainStyle.cssRules].filter(rule => rule.selectorText == obj.el)[0];
+    if (!start) return;
+    const check = start.style[attr];
 
     for (const item of mainStyle.cssRules) {
       if (item.selectorText == obj.el) {
