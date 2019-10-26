@@ -1,0 +1,45 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  background: #333;
+}
+
+.header {
+  background: #eeeeee;
+  padding: 20px;
+
+  h1 {
+    margin: 10px;
+    padding: 0;
+    font-family: Roboto;
+  }
+
+  img {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.description {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 20px;
+}
+
+.images {
+  padding: 20px;
+
+  img {
+    width: 100%;
+  }
+}
