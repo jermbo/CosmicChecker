@@ -18,7 +18,6 @@ h1 {
   width: 100px;
   height: 100px;
   background: #ffffff;
-  border: 2px solid #9a031e;
   text-align: center;
 }
 
@@ -26,29 +25,17 @@ h1 {
   width: 150px;
   height: 150px;
   padding: 10px;
-  border: 5px solid #17bc9b;
   background: #13987d;
   border-radius: 10px;
-  color: #ffffff;
-  text-align: center;
 }
 
 .box3 {
   width: 75px;
   height: 75px;
   padding: 15px;
-  border: 1px solid #fa85bc;
   border-radius: 50px;
   background: #ae2c6b;
   color: #fa85bc;
-  text-align: center;
-}
-
-.box4 {
-  width: 125px;
-  height: 125px;
-  padding: 12px;
-  border: 4px solid #fb8b24;
 }
 
 .buttons {
@@ -83,7 +70,7 @@ h1 {
 
 .button3 {
   text-decoration: none;
-  background: linear-gradient(#82263a 0%, #2d0d14 100%);
+  background: #82263a;
   color: #ff97af;
   cursor: zoom-in;
   padding: 18px;
@@ -91,6 +78,7 @@ h1 {
 }
 .button3:hover {
   color: #ffbfce;
+  background: #501723;
 }
 
 .texts {

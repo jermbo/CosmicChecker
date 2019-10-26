@@ -149,12 +149,13 @@ const Checker = (function() {
   function testExternalStyles(obj) {
     const attr = obj.test.item;
     const mainStyle = styles[0];
-    const check = mainStyle.cssRules[0].style[attr];
+    const check = [...mainStyle.cssRules].filter(rule => rule.selectorText == obj.el)[0].style[attr];
 
     for (const item of mainStyle.cssRules) {
       if (item.selectorText == obj.el) {
         if (attr == "color" || attr == "background") {
-          if (getHEX(check) == obj.test.value.toLowerCase()) {
+          const hex = getHEX(check);
+          if (hex == obj.test.value.toLowerCase()) {
             obj.completed = true;
           }
           return;
@@ -222,7 +223,7 @@ const Checker = (function() {
 
   function prevTasks(e) {
     e.preventDefault();
-    currentIndex = (currentIndex <= 0) ? 0 : --currentIndex;
+    currentIndex = currentIndex <= 0 ? 0 : --currentIndex;
     removeEventListeners();
     updateInstructions();
   }
@@ -230,7 +231,7 @@ const Checker = (function() {
   function nextTasks(e) {
     e.preventDefault();
     const total = allTasks.length - 1;
-    currentIndex = (currentIndex >= total) ? total : ++currentIndex;
+    currentIndex = currentIndex >= total ? total : ++currentIndex;
     removeEventListeners();
     updateInstructions();
   }
