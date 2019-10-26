@@ -56,27 +56,14 @@ h1 {
 }
 
 .button2 {
-  text-decoration: none;
-  background: #edf67d;
-  color: #3f411d;
-  cursor: wait;
-  padding: 8px;
-}
-.button2:hover {
-  color: #edf67d;
-  background: #3f411d;
-  font-weight: bold;
-}
-
-.button3 {
-  text-decoration: none;
   background: #82263a;
   color: #ff97af;
   cursor: zoom-in;
   padding: 18px;
   border-radius: 70px;
+  text-decoration: none;
 }
-.button3:hover {
+.button2:hover {
   color: #ffbfce;
   background: #501723;
 }

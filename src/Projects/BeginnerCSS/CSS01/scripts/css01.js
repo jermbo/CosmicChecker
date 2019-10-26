@@ -307,6 +307,80 @@ const buttons = {
   ],
 };
 
-const steps = [heading, boxes, boxes2, buttons];
+const buttons2 = {
+  desc: "We navigate around pages by clicking buttons. Let's style some buttons.",
+  example: `.button2 {
+  background: #82263a;
+  color: #ff97af;
+  cursor: zoom-in;
+  padding: 18px;
+  border-radius: 70px;
+  text-decoration: none;
+}
+.button2:hover {
+  color: #ffbfce;
+  background: #501723;
+}`,
+  tasks: [
+    {
+      type: "externalStyles",
+      el: ".button2",
+      test: { item: "background", value: "#82263a" },
+      instructions: "Give '.button2' a 'background' of #82263a",
+      hint: "background: #82263a;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2",
+      test: { item: "color", value: "#ff97af" },
+      instructions: "Give '.button2' a 'color' of #ff97af",
+      hint: "color: #ff97af;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2",
+      test: { item: "cursor", value: "zoom-in" },
+      instructions: "Give '.button2' a 'cursor' of zoom-in",
+      hint: "cursor: zoom-in;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2",
+      test: { item: "padding", value: "18px" },
+      instructions: "Give '.button2' a 'padding' of 18px",
+      hint: "padding: 18px;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2",
+      test: { item: "borderRadius", value: "70px" },
+      instructions: "Give '.button2' a 'border-radius' of 70px",
+      hint: "border-radius: 70px;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2",
+      test: { item: "textDecoration", value: "none" },
+      instructions: "Give '.button2' a 'text-decoration' of none",
+      hint: "text-decoration: none;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2:hover",
+      test: { item: "color", value: "#ffbfce" },
+      instructions: "Give '.button2' a 'color' of #ffbfce",
+      hint: "color: #ffbfce;",
+    },
+    {
+      type: "externalStyles",
+      el: ".button2:hover",
+      test: { item: "background", value: "#501723" },
+      instructions: "Give '.button2' a 'background' of #501723",
+      hint: "background: #501723;",
+    },
+  ],
+};
+
+const steps = [heading, boxes, boxes2, buttons, buttons2];
 // Pass the rules into this function and let the magic happen
 window.load = Checker.loadTests(steps);
