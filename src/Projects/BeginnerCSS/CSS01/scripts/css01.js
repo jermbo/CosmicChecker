@@ -381,6 +381,65 @@ const buttons2 = {
   ],
 };
 
-const steps = [heading, boxes, boxes2, buttons, buttons2];
+const text = {
+  desc: "There is a lot more text to be styles. ",
+  example: `.texts {
+  background: #d0e3f8;
+  padding: 30px;
+}
+
+.text1 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: Verdana;
+  font-weight: 900;
+}`,
+  tasks: [
+    {
+      type: "externalStyles",
+      el: ".texts",
+      test: { item: "background", value: "#d0e3f8" },
+      instructions: "Give '.texts' a 'background' of #d0e3f8",
+      hint: "background: #d0e3f8;",
+    },
+    {
+      type: "externalStyles",
+      el: ".texts",
+      test: { item: "padding", value: "30px" },
+      instructions: "Give '.texts' a 'padding' of 30px",
+      hint: "padding: 30px;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text1",
+      test: { item: "letterSpacing", value: "5px" },
+      instructions: "Give '.text1' a 'letter-spacing' of 5px",
+      hint: "letter-spacing: 5px;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text1",
+      test: { item: "textTransform", value: "uppercase" },
+      instructions: "Give '.text1' a 'text-transform' of uppercase",
+      hint: "text-transform: uppercase;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text1",
+      test: { item: "fontFamily", value: "Verdana" },
+      instructions: "Give '.text1' a 'font-family' of Verdana",
+      hint: "font-family: Verdana;",
+    },
+    {
+      type: "externalStyles",
+      el: ".text1",
+      test: { item: "fontWeight", value: "900" },
+      instructions: "Give '.text1' a 'font-weight' of 900",
+      hint: "font-weight: 900;",
+    },
+  ],
+};
+
+const steps = [heading, boxes, boxes2, buttons, buttons2, text];
 // Pass the rules into this function and let the magic happen
 window.load = Checker.loadTests(steps);
