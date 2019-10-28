@@ -90,6 +90,8 @@ When you need to verify external styles exist.
 
 ***Note: in order to run this properly a server needs to be running. It is a CORS issue to load a CSS from any location other than your domain. Make sure you are running browser sync or, if you are teaching, you have LiveServer turned on and being used.***
 
+***Note: as of version 1.0.0, please avoid short hand styles, especially with colors. The browser takes a hex value and converts it to rgb. Currently there is no check handles the short hand and rgb value.***
+
 #### inlineStyles
 
 When you need to verify inline styles exist. This can be done utilizing the `attribute` type as well, but this takes it a step further and checks multiple rules.
