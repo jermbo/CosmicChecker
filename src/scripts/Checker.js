@@ -1,5 +1,5 @@
 const Checker = (function() {
-  const version = "0.9.1";
+  const version = "1.0.0";
   const body = document.querySelector("body");
   const wrapper = document.querySelector(".wrapper");
   const styles = document.styleSheets;
@@ -153,6 +153,7 @@ const Checker = (function() {
     const start = [...mainStyle.cssRules].filter(rule => rule.selectorText == obj.el)[0];
     if (!start) return;
     const check = start.style[attr];
+    if(!check) return;
 
     for (const item of mainStyle.cssRules) {
       if (item.selectorText == obj.el) {
