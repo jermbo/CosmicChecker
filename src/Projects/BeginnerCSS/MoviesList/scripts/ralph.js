@@ -5,8 +5,8 @@ const body = {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  color: #ffffff;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.5);
 }`,
   tasks: [
     {
@@ -33,9 +33,9 @@ const body = {
     {
       type: "externalStyles",
       el: ".container",
-      test: { item: "padding", value: "20px" },
-      instructions: "Give the .container a 'padding' of 20px",
-      hint: "padding: 20px;",
+      test: { item: "padding", value: "30px" },
+      instructions: "Give the .container a 'padding' of 30px",
+      hint: "padding: 30px;",
     },
     {
       type: "externalStyles",
@@ -201,19 +201,20 @@ const gallery = {
   margin-bottom: 5vh;
 }
 .gallery-title {
-  margin: 0;
+  margin: 0px;
   padding-right: 10px;
   display: inline-block;
 }
 .gallery {
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 .gallery img {
-  flex: 1;
   object-fit: contain;
   width: 25%;
-}
-`,
+  margin-bottom: 25px;
+}`,
   tasks: [
     {
       type: "externalStyles",
@@ -252,6 +253,20 @@ const gallery = {
     },
     {
       type: "externalStyles",
+      el: ".gallery",
+      test: { item: "flex-wrap", value: "wrap" },
+      instructions: "Give .gallery a 'flex-wrap' of wrap",
+      hint: "flex-wrap: wrap;",
+    },
+    {
+      type: "externalStyles",
+      el: ".gallery",
+      test: { item: "marginBottom", value: "25px" },
+      instructions: "Give .gallery a 'margin-bottom' of 25px",
+      hint: "margin-bottom: 25px;",
+    },
+    {
+      type: "externalStyles",
       el: ".gallery img",
       test: { item: "objectFit", value: "contain" },
       instructions: "Give .gallery img a 'object-fit' of contain",
@@ -263,6 +278,13 @@ const gallery = {
       test: { item: "width", value: "25%" },
       instructions: "Give .gallery img a 'width' of 25%",
       hint: "width: 25%;",
+    },
+    {
+      type: "externalStyles",
+      el: ".gallery img",
+      test: { item: "marginBottom", value: "25px" },
+      instructions: "Give .gallery img a 'margin-bottom' of 25px",
+      hint: "margin-bottom: 25px;",
     },
   ],
 };

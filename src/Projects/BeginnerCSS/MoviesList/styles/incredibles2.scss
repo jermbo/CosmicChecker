@@ -27,54 +27,9 @@ body {
 }
 
 .container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px;
-  color: #ffffff;
+  /* Keep Me */
 }
 
 .title {
-  margin: 0;
-  padding-right: 10px;
-  display: inline-block;
-}
-
-.button {
-  background: #e9cd29;
-  color: #ae6d0a;
-  padding: 10px;
-  text-decoration: none;
-
-  &:hover {
-    background: #ae6d0a;
-    color: #e9cd29;
-  }
-}
-
-.description {
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.gallery-wrapper {
-  margin-bottom: 25px;
-}
-
-.gallery-title {
-  margin: 0;
-  padding-right: 10px;
-  display: inline-block;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-
-  img {
-    flex: 1;
-    object-fit: contain;
-    width: 100%;
-    margin-top: 20px;
-  }
+  /* Keep Me */
 }
