@@ -153,7 +153,7 @@ const Checker = (function() {
     const start = [...mainStyle.cssRules].filter(rule => rule.selectorText == obj.el)[0];
     if (!start) return;
     const check = start.style[attr];
-    if(!check) return;
+    if (!check) return;
 
     for (const item of mainStyle.cssRules) {
       if (item.selectorText == obj.el) {

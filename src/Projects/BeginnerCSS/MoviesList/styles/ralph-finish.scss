@@ -30,21 +30,27 @@ body {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 20px;
-  color: #ffffff;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .ralph {
-  width: 250px;
   position: fixed;
+  width: 250px;
   bottom: 0;
   right: 0;
 }
 
 .title {
   margin: 0;
-  padding-right: 10px;
-  display: inline-block;
+  padding-right: 5%;
+  display: inline;
+}
+
+.description {
+  font-size: 22px;
+  line-height: 2rem;
+  color: #1bb8e8;
 }
 
 .button {
@@ -59,13 +65,8 @@ body {
   }
 }
 
-.description {
-  font-size: 20px;
-  line-height: 30px;
-}
-
 .gallery-wrapper {
-  margin-bottom: 25px;
+  margin-bottom: 5vh;
 }
 
 .gallery-title {

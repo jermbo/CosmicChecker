@@ -167,12 +167,12 @@ const button = {
   desc: "We can change what the default link looks like to anything we want!",
   example: `.button {
   background: #fa3434;
-  color: #850b0b;
+  color: #851b1b;
   padding: 10px;
   text-decoration: none;
 }
 button:hover {
-  background: #850b0b;
+  background: #851b1b;
   color: #fa3434;
 }`,
   tasks: [
