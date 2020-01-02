@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0272fc;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.wrapper {
+  height: calc(100vh - 60px);
+  color: #d7e6f9;
+}
+
+.container {
+  width: 75%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+.row:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  background-position: center center;
+  background-size: 250px;
+  background-repeat: repeat-y;
+  background: linear-gradient(
+    0deg,
+    #0272fc 0%,
+    #0272fc 20%,
+    #02fee5 20%,
+    #02fee5 23%,
+    #0272fc 23%,
+    #0272fc 26%,
+    #02fee5 26%,
+    #02fee5 30%,
+    #0272fc 30%,
+    #0272fc 33%,
+    #02fee5 33%,
+    #02fee5 67%,
+    #0272fc 67%,
+    #0272fc 70%,
+    #02fee5 70%,
+    #02fee5 73%,
+    #0272fc 73%,
+    #0272fc 76%,
+    #02fee5 76%,
+    #02fee5 80%,
+    #0272fc 80%,
+    #0272fc 100%
+  );
+}
+
+.selected,
+.character:hover {
+  background-position: bottom center;
+}
+
+.selected-area:before {
+  content: "";
+  background: #02fee5;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* --------------------------------
+ Write your CSS here!
+ --------------------------------- */

@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(https://external-preview.redd.it/DCW1TFNOajA5JWur14y-bv_eHguLPRjMPecsc7LeHOw.jpg?width=960&crop=smart&auto=webp&s=38d8ea45fc703248b1138fa9a55e083d16c67f93);
+  background-image: url("https://external-preview.redd.it/DCW1TFNOajA5JWur14y-bv_eHguLPRjMPecsc7LeHOw.jpg?width=960&crop=smart&auto=webp&s=38d8ea45fc703248b1138fa9a55e083d16c67f93");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -16,55 +16,24 @@ body {
 
   &:before {
     content: "";
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.75);
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
   }
 }
 
-.wrapper {
-}
-
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  color: #ffffff;
+  /* Keep Me */
 }
 
 .miles {
-  height: 350px;
-  position: fixed;
-  right: 0;
+  /* Keep Me */
 }
 
 .gwen {
-  position: fixed;
-  left: 2vw;
-  bottom: 0;
-  width: 400px;
-}
-
-.description {
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.title {
-  margin: 0;
-  padding-bottom: 10px;
-}
-
-.gallery {
-  display: flex;
-
-  img {
-    flex: 1;
-    object-fit: contain;
-    width: 25%;
-  }
+  /* Keep Me */
 }
