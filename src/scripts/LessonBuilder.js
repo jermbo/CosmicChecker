@@ -1,95 +1,92 @@
 console.clear();
 const wrapper = document.querySelector(".wrapper");
 let domOutline = [];
-let finalLesson = [];
+let finalArr = [];
 
-function createDOMOutline(parent) {
-  let list = [parent];
-  let node = parent.firstElementChild;
-  while (node) {
-    if (node.nodeType == 1) {
-      list.push(createDOMOutline(node));
-    }
-    node = node.nextSibling;
-  }
-
-  if (list.length == 0) {
-    list = parent;
-  }
-  return list;
-}
-
-domOutline = createDOMOutline(wrapper);
-
-finalLesson = createLessonSteps(domOutline);
-console.log(finalLesson);
-
-function createLessonSteps(outline) {
-  const domArr = outline.filter((o, i) => i > 0).flatMap(x => x);
-  const output = [];
-
-  for (let i = 0; i < domArr.length; i++) {
-    if (Array.isArray(domArr[i])) {
-      output.push(domArr[i].flat(Infinity));
+function findComments(el) {
+  for (let i = 0; i < el.childNodes.length; i++) {
+    const node = el.childNodes[i];
+    if (node.nodeType === Node.COMMENT_NODE) {
+      const text = node.textContent.toLowerCase().trim();
+      if (text == "step") {
+        domOutline.push([node.nextElementSibling]);
+      } else if (text == "sub-step") {
+        domOutline[domOutline.length - 1].push(node.nextElementSibling);
+      }
     } else {
-      output.push([domArr[i]]);
+      findComments(node);
     }
   }
+}
+findComments(wrapper);
+console.log(domOutline);
 
-  return output;
+function buildLesson() {
+  for (let i = 0; i < domOutline.length; i++) {
+    const currentRow = domOutline[i];
+    const len = finalArr.push([]);
+    for (let j = 0; j < currentRow.length; j++) {
+      const currentColumn = currentRow[j];
+      finalArr[len - 1].push(...step(currentColumn));
+    }
+  }
 }
 
-// for (let i = 0; i < rootElem.children.length; i++) {
-//   // console.dir(rootElem.children[i].tagName);
-//   lessonOutline.push([rootElem.children[i]]);
+buildLesson();
+console.log(finalArr);
 
-//   if (rootElem.children[i].children.length) {
-//     for (let j = 0; j < rootElem.children.length - 1; j++) {
-//       lessonOutline[i].push(rootElem.children[i].children[j]);
-//     }
-//   }
-// }
+function step(item) {
+  const arr = [];
+  arr.push(`Create "${mockHTML(item)}" inside of ${item.parentNode.className}`);
 
-// // console.log(lessonOutline);
+  if (hasID(item)) {
+    // console.log("has id name");
+    arr.push(`Give that "${mockHTML(item)}" a id attribute of ${item.id}`);
+  }
 
-// for (let i = 0; i < lessonOutline.length; i++) {
-//   const lesson = lessonOutline[i];
-//   finalLesson.push([]);
-//   for (let j = 0; j < lesson.length; j++) {
-//     // console.log(`${i}`, lesson[j]);
-//     finalLesson[i].push(`Create a "${lesson[j].localName}" inside of "${getParentElem(lesson[j])}".`);
-//     finalLesson[i].push(`Give that new "${lesson[j].localName}" a class name of "${lesson[j].className}".`);
-//   }
-// }
+  if (hasClass(item)) {
+    // console.log("has class name");
+    arr.push(`Give that "${mockHTML(item)}" a class attribute of ${item.className}`);
+  }
 
-// function getParentElem(elem) {
-//   return `${elem.parentElement.localName}.${elem.parentElement.className}`;
-// }
+  if (textNode(item) && hasText(item)) {
+    // console.log("this should hold text");
+    arr.push(`Add the text "${item.firstChild.textContent.trim()}" to ${item.localName}`);
+  }
 
-// console.log("Final Lesson ----------");
-// console.log(finalLesson);
+  if (linkNode(item)) {
+    // console.log("this should hold link");
+    arr.push(`Give the link an href "${item.href}"`);
+    arr.push(`Add the text "${item.firstChild.textContent.trim()}" to ${item.localName}`);
+  }
 
-// const CreateLessons = function(parent = ".wrapper") {
-//   const wrapper = document.querySelector(parent);
-//   const rootElem = wrapper.children[0];
+  return arr;
+}
 
-//   let lessonOutline = [];
-//   let finalLessons = [];
+function mockHTML(item) {
+  return `<${item.localName.toLowerCase()}></${item.localName.toLowerCase()}>`;
+}
 
-//   function init() {
-//     console.log("asd");
-//   }
+function hasID(item) {
+  return item.id != "";
+}
 
-//   function getLessons() {
-//     return finalLessons;
-//   }
+function hasClass(item) {
+  return item.className != "";
+}
 
-//   init();
+function textNode(item) {
+  const local = item.localName.toLowerCase();
+  const types = ["h1", "h2", "h3", "h4", "h5", "h6", "span", "p", "i", "strong", "bold", "em"];
+  return types.some(t => t == local);
+}
 
-//   return {
-//     getLessons,
-//   };
-// };
+function hasText(item) {
+  return item.innerText != "";
+}
 
-// const robot = CreateLessons();
-// console.log(robot.getLessons());
+function linkNode(item) {
+  const local = item.localName.toLowerCase();
+  const types = ["a"];
+  return types.some(t => t == local);
+}
