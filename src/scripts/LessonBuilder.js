@@ -1,43 +1,14 @@
 console.clear();
 const wrapper = document.querySelector(".wrapper");
-const rootElem = wrapper.children[0];
-let lessonOutline = [];
+let domOutline = [];
 let finalLesson = [];
 
-/**
- * if element has children
- *  -- create new array index and add its children
- *
- * if element does not have children, and its not a part of an index,
- *   -- make new index and go to the next one.
- */
-
-// function createSteps(elem, arr = [], isRoot = true) {
-//   if (isRoot) {
-//     const children = [...elem.children].map(c => [c]);
-//     arr.push(...children);
-//     console.log(arr);
-//     createSteps(elem, arr, false);
-//     return;
-//   }
-
-//   for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-//     //   if (arr[i].children > 0) {
-//     //     console.log(arr[i].className + " has children");
-//     //   }
-//   }
-
-//   return arr;
-// }
-
-function createSteps(parent) {
-  console.log(parent);
-  let list = [];
+function createDOMOutline(parent) {
+  let list = [parent];
   let node = parent.firstElementChild;
   while (node) {
     if (node.nodeType == 1) {
-      list.push(createSteps(node));
+      list.push(createDOMOutline(node));
     }
     node = node.nextSibling;
   }
@@ -45,16 +16,28 @@ function createSteps(parent) {
   if (list.length == 0) {
     list = parent;
   }
-
   return list;
 }
 
-finalLesson = createSteps(rootElem);
+domOutline = createDOMOutline(wrapper);
+
+finalLesson = createLessonSteps(domOutline);
 console.log(finalLesson);
 
-// console.dir(rootElem.children);
+function createLessonSteps(outline) {
+  const domArr = outline.filter((o, i) => i > 0).flatMap(x => x);
+  const output = [];
 
-// lessonOutline.push([rootElem]);
+  for (let i = 0; i < domArr.length; i++) {
+    if (Array.isArray(domArr[i])) {
+      output.push(domArr[i].flat(Infinity));
+    } else {
+      output.push([domArr[i]]);
+    }
+  }
+
+  return output;
+}
 
 // for (let i = 0; i < rootElem.children.length; i++) {
 //   // console.dir(rootElem.children[i].tagName);
