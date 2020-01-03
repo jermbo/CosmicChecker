@@ -15,4 +15,3 @@ exports.clean = cleanAll;
 exports.default = series(cleanAll, parallel(html, styles, scripts, images), serve, watcher);
 
 exports.compile = series(cleanAll, parallel(html, styles, scripts, images), zip);
-

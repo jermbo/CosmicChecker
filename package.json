@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "gulp",
-    "compile": "gulp compile",
+    "compile": "gulp compile --removeComments=true",
     "clean": "gulp clean"
   },
   "devDependencies": {
@@ -40,6 +40,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-strip-comments": "^2.5.2",
     "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uglifycss": "^1.1.0",

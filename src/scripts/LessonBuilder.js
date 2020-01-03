@@ -1,7 +1,7 @@
 console.clear();
 const wrapper = document.querySelector(".wrapper");
 let domOutline = [];
-let finalArr = [];
+let tasksArr = [];
 
 function findComments(el) {
   for (let i = 0; i < el.childNodes.length; i++) {
@@ -24,16 +24,16 @@ console.log(domOutline);
 function buildLesson() {
   for (let i = 0; i < domOutline.length; i++) {
     const currentRow = domOutline[i];
-    const len = finalArr.push([]);
+    const len = tasksArr.push([]);
     for (let j = 0; j < currentRow.length; j++) {
       const currentColumn = currentRow[j];
-      finalArr[len - 1].push(...step(currentColumn));
+      tasksArr[len - 1].push(...step(currentColumn));
     }
   }
 }
 
 buildLesson();
-console.log(finalArr);
+console.log(tasksArr);
 
 function step(item) {
   const arr = [];
