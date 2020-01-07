@@ -38,7 +38,7 @@ It's important to explain what the student is trying to accomplish. The descript
 
 ### Example
 
-One thing I like to differently than FreeCodeCamp is give them the answer. Personally, I feel FCC tricks you unintentionally by explaining things with one example and making you write out something different. ( I get what they are trying to do, I just find it to be a source of confusion more than being helpful. )
+One thing I like to do differently than FreeCodeCamp is give them the answer. Personally, I feel FCC tricks you unintentionally by explaining things with one example and making you write out something different. ( I get what they are trying to do, I just find it to be a source of confusion more than being helpful. )
 
 Yes, it is very important to utilize the html entities for special characters. This section is displayed on screen to the student, and this avoids HTML from actually rendering the element.
 
