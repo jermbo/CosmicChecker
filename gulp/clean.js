@@ -6,7 +6,7 @@ function cleanAll() {
 }
 
 function cleanTmp() {
-  return del([tmpPath]);
+  return del([buildPath, tmpPath]);
 }
 
 exports.cleanTmp = cleanTmp;
