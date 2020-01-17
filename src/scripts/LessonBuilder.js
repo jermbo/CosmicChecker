@@ -39,21 +39,21 @@ function figureOutThing(item) {
   return item.localName.toLowerCase();
 }
 
-function getNumChildren(elem, thing) {
+function getNumChildren(elem, elemType) {
   const parent = document.querySelector(elem);
-  const children = parent.querySelectorAll(thing);
+  const children = parent.querySelectorAll(elemType);
   return children.length;
 }
 
 function step(item) {
   const arr = [];
-  const thing = figureOutThing(item);
+  const elemType = figureOutThing(item);
   const task = {
     type: "children",
     el: `.${item.parentNode.className}`,
-    test: { item: thing, value: getNumChildren(`.${item.parentNode.className}`, thing) },
+    test: { item: elemType, value: getNumChildren(`.${item.parentNode.className}`, elemType) },
     instructions: `Create "${mockHTML(item)}" inside of "${item.parentNode.className}"`,
-    hint: escapeHTML(`<${thing}></${thing}>`),
+    hint: mockHTML(item),
   };
 
   arr.push(task);
@@ -61,9 +61,9 @@ function step(item) {
   if (hasID(item)) {
     const task = {};
     task.type = "attribute";
-    task.el = `.${item.parentNode.className}`;
+    task.el = `#${item.id}`;
     task.test = { item: "id", value: item.id };
-    task.instructions = `Give that "${mockHTML(item)}" a id attribute of "${item.id}".`;
+    task.instructions = `Give that "${mockHTML(item)}" a id attribute of "${item.id}"`;
     task.hint = escapeHTML(`id="${item.id}"`);
     arr.push(task);
   }
@@ -71,9 +71,9 @@ function step(item) {
   if (hasClass(item)) {
     const task = {};
     task.type = "attribute";
-    task.el = `.${item.parentNode.className}`;
-    task.test = { item: "class", value: item.className };
-    task.instructions = `Give that "${mockHTML(item)}" a class attribute of "${item.className}".`;
+    task.el = `.${item.className}`;
+    task.test = { item: "className", value: item.className };
+    task.instructions = `Give that "${mockHTML(item)}" a class attribute of "${item.className}"`;
     task.hint = escapeHTML(`class="${item.className}"`);
     arr.push(task);
   }
@@ -83,7 +83,7 @@ function step(item) {
     task.type = "attribute";
     task.el = `#${item.parentNode.id} ${item.localName}`;
     task.test = { item: item.localName, value: item.firstChild.textContent.trim() };
-    task.instructions = `Add the text "${item.firstChild.textContent.trim()}" to the "${item.localName}".`;
+    task.instructions = `Add the text "${item.firstChild.textContent.trim()}" to the "${item.localName}"`;
     task.hint = item.firstChild.textContent.trim();
     arr.push(task);
   }
@@ -110,7 +110,7 @@ function step(item) {
 }
 
 function mockHTML(item) {
-  return `<${item.localName.toLowerCase()}></${item.localName.toLowerCase()}>`;
+  return escapeHTML(`<${item.localName.toLowerCase()}></${item.localName.toLowerCase()}>`);
 }
 
 function escapeHTML(item) {
