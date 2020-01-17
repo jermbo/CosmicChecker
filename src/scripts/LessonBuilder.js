@@ -19,7 +19,7 @@ function findComments(el) {
   }
 }
 findComments(wrapper);
-console.log(domOutline);
+// console.log(domOutline);
 
 function buildLesson() {
   for (let i = 0; i < domOutline.length; i++) {
@@ -33,31 +33,77 @@ function buildLesson() {
 }
 
 buildLesson();
-console.log(tasksArr);
+console.log(tasksArr[2]);
+
+function figureOutThing(item) {
+  return item.localName.toLowerCase();
+}
+
+function getNumChildren(elem, thing) {
+  const parent = document.querySelector(elem);
+  const children = parent.querySelectorAll(thing);
+  return children.length;
+}
 
 function step(item) {
   const arr = [];
-  arr.push(`Create "${mockHTML(item)}" inside of ${item.parentNode.className}`);
+  const thing = figureOutThing(item);
+  const task = {
+    type: "children",
+    el: `.${item.parentNode.className}`,
+    test: { item: thing, value: getNumChildren(`.${item.parentNode.className}`, thing) },
+    instructions: `Create "${mockHTML(item)}" inside of "${item.parentNode.className}"`,
+    hint: escapeHTML(`<${thing}></${thing}>`),
+  };
+
+  arr.push(task);
 
   if (hasID(item)) {
-    // console.log("has id name");
-    arr.push(`Give that "${mockHTML(item)}" a id attribute of ${item.id}`);
+    const task = {};
+    task.type = "attribute";
+    task.el = `.${item.parentNode.className}`;
+    task.test = { item: "id", value: item.id };
+    task.instructions = `Give that "${mockHTML(item)}" a id attribute of "${item.id}".`;
+    task.hint = escapeHTML(`id="${item.id}"`);
+    arr.push(task);
   }
 
   if (hasClass(item)) {
-    // console.log("has class name");
-    arr.push(`Give that "${mockHTML(item)}" a class attribute of ${item.className}`);
+    const task = {};
+    task.type = "attribute";
+    task.el = `.${item.parentNode.className}`;
+    task.test = { item: "class", value: item.className };
+    task.instructions = `Give that "${mockHTML(item)}" a class attribute of "${item.className}".`;
+    task.hint = escapeHTML(`class="${item.className}"`);
+    arr.push(task);
   }
 
   if (textNode(item) && hasText(item)) {
-    // console.log("this should hold text");
-    arr.push(`Add the text "${item.firstChild.textContent.trim()}" to ${item.localName}`);
+    const task = {};
+    task.type = "attribute";
+    task.el = `#${item.parentNode.id} ${item.localName}`;
+    task.test = { item: item.localName, value: item.firstChild.textContent.trim() };
+    task.instructions = `Add the text "${item.firstChild.textContent.trim()}" to the "${item.localName}".`;
+    task.hint = item.firstChild.textContent.trim();
+    arr.push(task);
   }
 
   if (linkNode(item)) {
-    // console.log("this should hold link");
-    arr.push(`Give the link an href "${item.href}"`);
-    arr.push(`Add the text "${item.firstChild.textContent.trim()}" to ${item.localName}`);
+    const task = {};
+    task.type = "attribute";
+    task.el = `#${item.parentNode.id} ${item.localName}`;
+    task.test = { item: "a", value: item.className };
+    task.instructions = `Give the link an href "${item.href}"`;
+    arr.push(task);
+  }
+
+  if (linkNode(item)) {
+    const task = {};
+    task.type = "attribute";
+    task.el = `#${item.parentNode.id} ${item.localName}`;
+    task.test = { item: "a", value: item.className };
+    task.instructions = `Add the text "${item.firstChild.textContent.trim()}" to the "${item.localName}" tag.`;
+    arr.push(task);
   }
 
   return arr;
@@ -65,6 +111,16 @@ function step(item) {
 
 function mockHTML(item) {
   return `<${item.localName.toLowerCase()}></${item.localName.toLowerCase()}>`;
+}
+
+function escapeHTML(item) {
+  const safe = item
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+  return safe;
 }
 
 function hasID(item) {
@@ -90,3 +146,20 @@ function linkNode(item) {
   const types = ["a"];
   return types.some(t => t == local);
 }
+
+/// Build final steps
+/**
+  {
+    desc: '',
+    code: ``,
+    tasks: [
+      {
+        type: "children || attribute",
+        el: "", defaults to wrapper
+        test: { item: "div", value: 1 },
+        instructions: "Create a &lt;div&gt;&lt;/div&gt; inside wrapper",
+        hint: "Add &lt;div&gt;&lt;/div&gt;",
+      }
+    ]
+  }
+ */
