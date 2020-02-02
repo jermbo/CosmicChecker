@@ -264,5 +264,258 @@ const bottom = {
 };
 
 const steps = [wrapper, antenna, head, body, bottom];
+const steps2 = [
+  {
+    "desc": "",
+    "example": "",
+    "tasks": [
+      {
+        "type": "children",
+        "el": "",
+        "test": {
+          "item": "div",
+          "value": 1
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"wrapper\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".robot",
+        "test": {
+          "item": "className",
+          "value": "robot"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"robot\"",
+        "hint": "class=&quot;robot&quot;"
+      }
+    ]
+  },
+  {
+    "desc": "",
+    "example": "",
+    "tasks": [
+      {
+        "type": "children",
+        "el": ".robot",
+        "test": {
+          "item": "div",
+          "value": 1
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"robot\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".antenna",
+        "test": {
+          "item": "className",
+          "value": "antenna"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"antenna\"",
+        "hint": "class=&quot;antenna&quot;"
+      }
+    ]
+  },
+  {
+    "desc": "",
+    "example": "",
+    "tasks": [
+      {
+        "type": "children",
+        "el": ".robot",
+        "test": {
+          "item": "div",
+          "value": 2
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"robot\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".head",
+        "test": {
+          "item": "className",
+          "value": "head"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"head\"",
+        "hint": "class=&quot;head&quot;"
+      },
+      {
+        "type": "children",
+        "el": ".head",
+        "test": {
+          "item": "span",
+          "value": 1
+        },
+        "instructions": "Create \"&lt;span&gt;&lt;/span&gt;\" inside of \"head\"",
+        "hint": "&lt;span&gt;&lt;/span&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".eye-left",
+        "test": {
+          "item": "className",
+          "value": "eye-left"
+        },
+        "instructions": "Give that \"&lt;span&gt;&lt;/span&gt;\" a class attribute of \"eye-left\"",
+        "hint": "class=&quot;eye-left&quot;"
+      },
+      {
+        "type": "children",
+        "el": ".head",
+        "test": {
+          "item": "span",
+          "value": 2
+        },
+        "instructions": "Create \"&lt;span&gt;&lt;/span&gt;\" inside of \"head\"",
+        "hint": "&lt;span&gt;&lt;/span&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".eye-right",
+        "test": {
+          "item": "className",
+          "value": "eye-right"
+        },
+        "instructions": "Give that \"&lt;span&gt;&lt;/span&gt;\" a class attribute of \"eye-right\"",
+        "hint": "class=&quot;eye-right&quot;"
+      },
+      {
+        "type": "children",
+        "el": ".head",
+        "test": {
+          "item": "span",
+          "value": 3
+        },
+        "instructions": "Create \"&lt;span&gt;&lt;/span&gt;\" inside of \"head\"",
+        "hint": "&lt;span&gt;&lt;/span&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".mouth",
+        "test": {
+          "item": "className",
+          "value": "mouth"
+        },
+        "instructions": "Give that \"&lt;span&gt;&lt;/span&gt;\" a class attribute of \"mouth\"",
+        "hint": "class=&quot;mouth&quot;"
+      }
+    ]
+  },
+  {
+    "desc": "",
+    "example": "",
+    "tasks": [
+      {
+        "type": "children",
+        "el": ".robot",
+        "test": {
+          "item": "div",
+          "value": 3
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"robot\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".body",
+        "test": {
+          "item": "className",
+          "value": "body"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"body\"",
+        "hint": "class=&quot;body&quot;"
+      },
+      {
+        "type": "children",
+        "el": ".body",
+        "test": {
+          "item": "div",
+          "value": 1
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"body\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".arm-left",
+        "test": {
+          "item": "className",
+          "value": "arm-left"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"arm-left\"",
+        "hint": "class=&quot;arm-left&quot;"
+      },
+      {
+        "type": "children",
+        "el": ".body",
+        "test": {
+          "item": "div",
+          "value": 2
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"body\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".arm-right",
+        "test": {
+          "item": "className",
+          "value": "arm-right"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"arm-right\"",
+        "hint": "class=&quot;arm-right&quot;"
+      },
+      {
+        "type": "children",
+        "el": ".body",
+        "test": {
+          "item": "div",
+          "value": 3
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"body\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".bolt",
+        "test": {
+          "item": "className",
+          "value": "bolt"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"bolt\"",
+        "hint": "class=&quot;bolt&quot;"
+      }
+    ]
+  },
+  {
+    "desc": "",
+    "example": "",
+    "tasks": [
+      {
+        "type": "children",
+        "el": ".robot",
+        "test": {
+          "item": "div",
+          "value": 4
+        },
+        "instructions": "Create \"&lt;div&gt;&lt;/div&gt;\" inside of \"robot\"",
+        "hint": "&lt;div&gt;&lt;/div&gt;"
+      },
+      {
+        "type": "attribute",
+        "el": ".bottom",
+        "test": {
+          "item": "className",
+          "value": "bottom"
+        },
+        "instructions": "Give that \"&lt;div&gt;&lt;/div&gt;\" a class attribute of \"bottom\"",
+        "hint": "class=&quot;bottom&quot;"
+      }
+    ]
+  }
+];
+
 // Pass the rules into this function and let the magic happen in the object
-window.load = Checker.loadTests(steps);
+window.load = Checker.loadTests(steps2);

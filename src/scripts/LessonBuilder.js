@@ -27,31 +27,47 @@ function buildLesson() {
     const len = tasksArr.push([]);
     for (let j = 0; j < currentRow.length; j++) {
       const currentColumn = currentRow[j];
-      tasksArr[len - 1].push(...step(currentColumn));
+      tasksArr[len - 1].push(...step(currentColumn, i, j));
     }
   }
 }
 
 buildLesson();
-console.log(tasksArr[2]);
+// console.log(tasksArr);
+
+const allTasks = tasksArr.map(t => {
+  return {
+    desc: "",
+    example: "",
+    tasks: t,
+  };
+});
+
+console.log(allTasks.tasks);
 
 function figureOutThing(item) {
   return item.localName.toLowerCase();
 }
 
-function getNumChildren(elem, elemType) {
-  const parent = document.querySelector(elem);
-  const children = parent.querySelectorAll(elemType);
-  return children.length;
+function getAccurateIndex(row, column) {
+  // return index <= 1 ? 1 : index;
+  if(row == 0 && column == 0) { return 1; }
+  return column == 0 ? row : column;
 }
 
-function step(item) {
+function getParentClassName(item) {
+  const parentClassName = item.parentNode.className;
+  return parentClassName != "wrapper" ? `.${parentClassName}` : "";
+}
+
+function step(item, row, column) {
   const arr = [];
   const elemType = figureOutThing(item);
   const task = {
     type: "children",
-    el: `.${item.parentNode.className}`,
-    test: { item: elemType, value: getNumChildren(`.${item.parentNode.className}`, elemType) },
+    el: getParentClassName(item),
+    // test: { item: elemType, value: getNumChildren(`.${item.parentNode.className}`) },
+    test: { item: elemType, value: getAccurateIndex(row, column) },
     instructions: `Create "${mockHTML(item)}" inside of "${item.parentNode.className}"`,
     hint: mockHTML(item),
   };
@@ -146,20 +162,3 @@ function linkNode(item) {
   const types = ["a"];
   return types.some(t => t == local);
 }
-
-/// Build final steps
-/**
-  {
-    desc: '',
-    code: ``,
-    tasks: [
-      {
-        type: "children || attribute",
-        el: "", defaults to wrapper
-        test: { item: "div", value: 1 },
-        instructions: "Create a &lt;div&gt;&lt;/div&gt; inside wrapper",
-        hint: "Add &lt;div&gt;&lt;/div&gt;",
-      }
-    ]
-  }
- */
