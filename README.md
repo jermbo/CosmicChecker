@@ -14,7 +14,7 @@ The `index.html` and `styles` folders are currently not being utilized. I envisi
 
 ---
 
-## Checker APIs
+## Checker API
 
 As of right now, `Checker` has no public methods. Everything is handled within the `Checker` module. You simply need to pass in an array of objects to a `new Checker()` instance.
 
